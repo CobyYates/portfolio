@@ -5,20 +5,17 @@
       app
       dense
       dark
-      class="d-flex justify-space-around bar"
+      class="bar"
     >
-    <span>
       <v-avatar
         size="36px"
       >
-        <v-icon>mdi-pencil</v-icon>
+        <v-img src="https://i.imgur.com/a8JzMHo.png" />
       </v-avatar>
-    </span>
-    <span>
+    <v-spacer />
       <v-btn text>Home</v-btn>
       <v-btn text>Work</v-btn>
-      <v-btn text><v-icon left>mdi-import</v-icon>Resume</v-btn>
-    </span>
+      <v-btn text>Resume<v-icon right>mdi-download</v-icon></v-btn>
     </v-app-bar>
     
     <v-main class="content">
@@ -27,12 +24,6 @@
       </v-container>
     </v-main>
     
-    <v-footer
-      color="indigo"
-      app
-    >
-      <span class="white--text">&copy; {{ new Date().getFullYear() }} | COBY YATES</span>
-    </v-footer>
   </v-app>
 </template>
 
