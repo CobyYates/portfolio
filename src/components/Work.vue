@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-sheet
-      class="mx-auto"
+      class="mx-auto mb-10"
       max-width="95%"
       color="transparent"
     >
@@ -57,315 +57,126 @@
       >
         <v-card
           height="300"
+          color="transparent"
+          flat
           width="300"
-          elevation="10"
-          class="pa-10 ma-8"
+          class="pa-0 ma-3 d-flex align-center"
+          @click="selectedProject = project; dialog = true"
         >
           <v-img :src="`${project.logo}`"></v-img>
         </v-card>
       </v-col>
     </v-row>
-           
+    
+
+    <v-dialog
+      v-model="dialog"
+      width="100%"
+    >
+      <v-card height="100%" width="100%">
+        <v-row class="pa-0 ma-0">
+          <v-col class="pa-0" cols="7">
+            <v-carousel height="100%" hide-delimiters :show-arrows="selectedProject.images.length > 1 && selectedProject.images !== undefined ? true : false">
+              <v-carousel-item
+                
+                v-for="(item,i) in selectedProject.images"
+                :key="i.location"
+                :src="item.location"
+              ></v-carousel-item>
+            </v-carousel>
+          </v-col>
+          <v-col cols="5" class="d-flex flex-column justify-space-between">
+            <v-card-title>{{selectedProject.title}}
+              <v-spacer />
+                <span class="subtitle-2">Type: {{selectedProject.type}}</span>
+            </v-card-title>
+            <v-card-subtitle>
+                Stage: {{selectedProject.stage}}
+            </v-card-subtitle>
+            <v-divider />
+            <v-card-subtitle>{{selectedProject.description}}</v-card-subtitle>
+            <v-list>
+              <v-subheader>Requirements</v-subheader>
+              <v-list-item
+                v-for="(item, i) in selectedProject.requirements"
+                :key="i"
+                dense
+              >
+                <v-list-item-content>
+                  <v-list-item-title>- {{item.text}}</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list>
+            <v-card-text>
+              <div>
+                
+              </div>
+              <div>
+                <p class="title mb-0 mt-1">Languages Used</p>
+                <v-chip
+                  v-for="item in selectedProject.languages"
+                  :key="item.i"
+                  class="ma-2"
+                  color="grey lighten-3"
+                  label
+                >
+                  <v-icon :color="item.color" left>{{item.icon}}</v-icon>
+                  {{item.text}}
+                </v-chip>
+              </div>
+            </v-card-text>
+              <v-card-actions>
+                <v-spacer />
+                <v-btn color="primary" @click="openTab(selectedProject.live)" text class="mt-4"><v-icon left>mdi-open-in-new</v-icon>View Live Site</v-btn>
+                <v-btn color="black" @click="openTab(selectedProject.github)" text class="mt-4"><v-icon left>mdi-github</v-icon>View Repository</v-btn>
+              </v-card-actions>
+          </v-col>
+        </v-row>
+      </v-card>
+    </v-dialog>
+
+    <v-snackbar
+      v-model="privateRepo"
+    >
+      Sorry, this is a private Repository
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="primary"
+          text
+          v-bind="attrs"
+          @click="privateRepo = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
   </v-container>
 </template>
 
 <script>
 export default {
+  components: {
+  },
   data() {
     return {
       show: false,
       model: null,
+      selectedProject: {images: []},
+      privateRepo: false,
+      dialog: false,
       all: 'all',
       projects: [],
-      // projects: ['HTML','CSS','JavaScript','Vue.js','Vuetify','GraphQL','React','WordPress','Firebase','Next.js','Node'],
-      cards: [
-        {
-          title: "Keystroke App",
-          subTitle: "UVU Cinema Keystroke App",
-          github: "",
-          type: "College Capstone",
-          live: "",
-          description: "Senior Capstone project for UVU Cinema Dept",
-          requirements: [
-            { text: "Create testing platform for staff and students" },
-            { text: "Allow teachers to create their own quizzes" },
-            { text: "Record students keystrokes using JavaScript" },
-            { text: "Record data in a database" },
-            { text: "Allow teachers to create their own quizzes" },
-          ],
-          languages: [
-            { icon: "mdi-vuejs", text: "Vue.js", color: "blue" },
-            { icon: "mdi-vuetify", text: "Vuetify", color: "blue" },
-            { icon: "mdi-firebase", text: "Node.js", color: "green" },
-          ],
-          logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Utah_Valley_University_seal.svg/1200px-Utah_Valley_University_seal.svg.png',
-          images: [
-            { location: '' },
-            { location: '' },
-            { location: '' },
-          ],
-          stage: 'Complete',
-          tags: ['Vue.js','Vuetify','Firebase','HTML','CSS','JavaScript']
-        },
-        {
-          title: "Good Grindz",
-          subTitle: "Food Truck Website",
-          github: "",
-          type: "Freelance",
-          live: "http://goodgrindz.com",
-          description: "Shows details about their business",
-          requirements: [
-            { text: "Add a menu page so customers can see what they make" },
-            { text: "Show their business locations" },
-            { text: "Add their social media feeds" },
-          ],
-          languages: [
-            { icon: "mdi-wordpress", text: "WordPress", color: "blue" },
-          ],
-          logo: 'https://www.goodgrindz.com/wp-content/uploads/2019/03/Good-Grindz-Calendar.png',
-          images: [
-            { location: '' },
-            { location: '' },
-            { location: '' },
-          ],
-          stage: 'In Development',
-          tags: ['WordPress']
-        },
-        {
-          title: "Boka",
-          subTitle: "Content Creator Finder",
-          github: "https://github.com/CobyYates/Boka",
-          type: "Freelance, Passion Project",          
-          live: "http://goodgrindz.com",
-          description: "",
-          requirements: [
-            { text: "Create a CRM for content creators" },
-            { text: "Create dashboard for content creators" },
-          ],
-          languages: [
-            { icon: "mdi-vuejs", text: "Vue.js", color: "blue" },
-            { icon: "mdi-vuetify", text: "Vuetify", color: "blue" },
-            { icon: "mdi-firebase", text: "Node.js", color: "green" },
-          ],
-          logo: 'https://github.com/CobyYates/Boka/blob/master/src/assets/logo.png?raw=true',
-          images: [
-            { location: '' },
-            { location: '' },
-            { location: '' },
-          ],
-          stage: 'In Development',
-          tags: ['Vue.js','Vuetify','Firebase','HTML','CSS','JavaScript']
-        },
-        {
-          title: "Lone Peak Client Management",
-          subTitle: "Client Management Web Application",
-          github: "",
-          type: "Freelance",
-          live: "http://cms.lonepeakvaluation.com",
-          description: "A web app for keeping track of their clients and cases",
-          requirements: [
-            { text: "Create a web application to live on a subdomain" },
-            { text: "Use PHP endpoints to get data from MySQL backend" },
-            { text: "Convert a Microsoft Access app into web application" },
-            { text: "Include authentication for each employee" },
-            { text: "Install SSL to secure the site" },
-          ],
-          languages: [
-            { icon: "mdi-vuejs", text: "Vue.js", color: "blue" },
-            { icon: "mdi-vuetify", text: "Vuetify", color: "blue" },
-            { icon: "mdi-language-javascript", text: "JavaScript", color: "blue" },
-            { icon: "mdi-firebase", text: "Node.js", color: "green" },
-          ],
-          logo: 'https://lonepeakvaluation.com/wp-content/uploads/2017/05/LonePeak-Logo-EPS.png',
-          images: [
-            { location: '' },
-            { location: '' },
-            { location: '' },
-          ],
-          stage: 'Near Complete',
-          tags: ['Vue.js','Vuetify','Firebase','HTML','CSS','JavaScript']
-        },
-        {
-          title: "Pokemon API",
-          subTitle: "Pokemon API Project",
-          github: "",
-          type: "College Project",
-          live: "",
-          description: "For this project, I learned JavaScript for the first time. The project was to fetch data from an API and display it in a card layout.",
-          requirements: [
-            { text: "Display at least 25 Pokemon from the PokeAPI" },
-            { text: "Be able to fetch a single PokeAPI" },
-            { text: "Generate a new Pokemon card" },
-          ],
-          languages: [
-            { icon: "mdi-language-javascript", text: "JavaScript", color: "blue" },
-            { icon: "mdi-language-html5", text: "HTML", color: "blue" },
-            { icon: "mdi-language-css3", text: "CSS", color: "blue" },
-          ],
-          logo: 'https://pokeapi.co/static/pokeapi_256.888baca4.png',
-          images: [
-            { location: '' },
-            { location: '' },
-            { location: '' },
-          ],
-          stage: 'Complete',
-          tags: ['HTML','CSS','JavaScript']
-        },
-        {
-          title: "Star Wars API",
-          subTitle: "Project for fetching data form Star Wars API",
-          github: "",
-          type: "College Project",
-          live: "",
-          description: "For this project, I learned JavaScript and fetched data from the Star Wars API. I utilized JavaScript ES6 to help with filtering the incoming data.",
-          requirements: [
-            { text: "Create a card layout for representing the incoming data" },
-            { text: "Generate list of all the movies from Star Wars" },
-            { text: "Be able to filter Male/Female characters using ES6 syntax" },
-            { text: "Include navigation" },
-          ],
-          languages: [
-            { icon: "mdi-language-javascript", text: "JavaScript", color: "blue" },
-            { icon: "mdi-language-html5", text: "HTML", color: "blue" },
-            { icon: "mdi-language-css3", text: "CSS", color: "blue" },
-          ],
-          logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1280px-Star_Wars_Logo.svg.png',
-          images: [
-            { location: '' },
-            { location: '' },
-            { location: '' },
-          ],
-          stage: '',
-          tags: ['HTML','CSS','JavaScript']
-        },
-        {
-          title: "Car Garage",
-          subTitle: "Vue.js website for building a dream car garage",
-          github: "",
-          type: "College Project",
-          live: "",
-          description: "This project was over one semester where we learned Vue.js. I learned how to do state management to allow the user to create a dream garage. I had a lot of fun with this project.",
-          requirements: [
-            { text: "Encapsulate code as VueJS single-file components" },
-            { text: "Communicate between components using props & local store" },
-            { text: "Create user form with validation and feedback" },
-            { text: "Create a custom directive" },
-            { text: "Use animations and transitions" },
-            { text: "Connect to an API using Axios" },
-            { text: "Manage your application's state using vuex" },
-          ],
-          languages: [
-            { icon: "mdi-vuejs", text: "Vue.js", color: "blue" },
-            { icon: "mdi-vuetify", text: "Vuetify", color: "blue" },
-            { icon: "mdi-language-javascript", text: "JavaScript", color: "blue" },
-            { icon: "mdi-language-html5", text: "HTML", color: "blue" },
-            { icon: "mdi-language-css3", text: "CSS", color: "blue" },
-          ],
-          logo: '',
-          images: [
-            { location: '' },
-            { location: '' },
-            { location: '' },
-          ],
-          stage: 'Complete',
-          tags: ['Vue.js','Vuetify','HTML','CSS','JavaScript']
-        },
-        {
-          title: "Car Garage version 2",
-          subTitle: "Vue.js website for building a dream car garage utilizing GraphQL & MongoDB",
-          github: "",
-          type: "College Project",
-          live: "",
-          description: "This project was over one semester where we learned some GraphQL and MongoDB. We had to create an API hosted on MongoDB, and a GraqhQL backend.",
-          requirements: [
-            { text: "Encapsulate code as VueJS single-file components" },
-            { text: "Communicate between components using props & local store" },
-            { text: "Create my own API built and deployed to MongoDB" },
-            { text: "Connect my own API using Axios" },
-            { text: "Build and work with CRUD within the GraphQL backend" },
-          ],
-          languages: [
-            { icon: "mdi-vuejs", text: "Vue.js", color: "blue" },
-            { icon: "mdi-vuetify", text: "Vuetify", color: "blue" },
-            { icon: "mdi-language-javascript", text: "JavaScript", color: "blue" },
-            { icon: "mdi-language-html5", text: "HTML", color: "blue" },
-            { icon: "mdi-language-css3", text: "CSS", color: "blue" },
-            { icon: "mdi-language-graphql", text: "GraphQL", color: "Pink" },
-            { icon: "mdi-database", text: "MongoDB", color: "Green" },
-          ],
-          logo: '',
-          images: [
-            { location: '' },
-            { location: '' },
-            { location: '' },
-          ],
-          stage: 'Complete',
-          warning: 'This project requires GraphQL to run locally. Information can be found in the GitHub repository',
-          tags: ['Vue.js','Vuetify','HTML','CSS','JavaScript','MongoDB','GraphQL']
-        },
-        {
-          title: "Weather APP",
-          subTitle: "Weather APP built in React",
-          github: "",
-          type: "College Project",
-          live: "",
-          description: "This is a project we had to complete in under a week. I learned as much React as I could in that amount of time and made what you see here.",
-          requirements: [
-            { text: "Fetch data from a weather API" },
-            { text: "Display 1 week of weather" },
-            { text: "Ability to switch between C° and F°" },
-            { text: "Search weather by zipcode provided by user" },
-          ],
-          languages: [
-            { icon: "mdi-react", text: "React", color: "blue" },
-            { icon: "mdi-material-ui", text: "Material UI", color: "blue" },
-            { icon: "mdi-language-javascript", text: "JavaScript", color: "blue" },
-            { icon: "mdi-language-html5", text: "HTML", color: "blue" },
-            { icon: "mdi-language-css3", text: "CSS", color: "blue" },
-          ],
-          logo: '',
-          images: [
-            { location: '' },
-            { location: '' },
-            { location: '' },
-          ],
-          stage: '',
-          tags: ['Vue.js','Vuetify','Firebase','HTML','CSS','JavaScript']
-        },
-        // {
-        //   title: "",
-        //   subTitle: "",
-        //   github: "",
-        //   type: "",
-        //   live: "",
-        //   description: "",
-        //   requirements: [
-        //     { text: "" },
-        //     { text: "" },
-        //     { text: "" },
-        //   ],
-        //   languages: [
-        //     { icon: "mdi-vuejs", text: "Vue.js", color: "blue" },
-        //     { icon: "mdi-vuetify", text: "Vuetify", color: "blue" },
-        //     { icon: "mdi-firebase", text: "Node.js", color: "green" },
-        //     { icon: "mdi-language-javascript", text: "JavaScript", color: "blue" },
-        //     { icon: "mdi-language-html5", text: "HTML", color: "blue" },
-        //     { icon: "mdi-language-css3", text: "CSS", color: "blue" },
-        //   ],
-        //   logo: '',
-        //   images: [
-        //     { location: '' },
-        //     { location: '' },
-        //     { location: '' },
-        //   ],
-        //   stage: '',
-        //   tags: ['Vue.js','Vuetify','Firebase','HTML','CSS','JavaScript']
-        // },
-      ],
+      items: [
+          {
+            src: '../assets/images/Garage.png',
+          },
+        ],
+      
       languages: [
         { lang: 'HTML', url: 'mdi-language-html5', color: 'orange' },
         { lang: 'CSS', url: 'mdi-language-css3', color: 'blue' },
-        { lang: 'JavaScript', url: 'mdi-language-javascript', color: 'yellow' },
+        { lang: 'JavaScript', url: 'mdi-language-javascript', color: 'amber' },
         { lang: 'Vue.js', url: 'mdi-vuejs', color: 'green' },
         { lang: 'Vuetify', url: 'mdi-vuetify', color: 'blue' },
         { lang: 'GraphQL', url: 'mdi-graphql', color: 'pink' },
@@ -381,11 +192,14 @@ export default {
   },
   methods: {
     filterProjects(lang) {
-      this.projects = this.cards.filter(e => e.tags.includes(`${lang.lang}`))
+      this.projects = this.$store.state.cards.filter(e => e.tags.includes(`${lang.lang}`))
+    },
+    openTab(url){
+      url !== '' ? window.open(url, "_blank") : this.privateRepo = true
     },
   },
   mounted() {
-    this.projects = this.cards
+    this.projects = this.$store.state.cards
   }
 };
 </script>

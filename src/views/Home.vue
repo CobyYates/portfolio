@@ -9,8 +9,16 @@
         <h2>I design and develop great looking websites. Learning is my passion.</h2>
       </div>
     </div>
-    <About class="about" />
-    <Work class="work" />
+    <v-row>
+      <v-col>
+        <Work class="work" />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <About class="about" />
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -30,14 +38,14 @@ export default {
 <style scoped>
 .hero {
   background-color: #262e37;
-  height: 60vh;
+  height: 80vh;
   margin: 0;
 }
 
 .hero:before {
   content: "";
   position: absolute;
-  top: 60vh;
+  top: 80vh;
   bottom: 0;
   left: 0;
   width: 100vw;
@@ -53,6 +61,10 @@ export default {
 .about {
   width: 75%;
   margin-top: -120px;
+}
+
+.work {
+  /* height: 100vh; */
 }
 
 </style>
