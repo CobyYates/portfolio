@@ -18,6 +18,7 @@
           align="center"
           justify="center"
         >
+          <!-- <h2 id="title" class="white--text">My Projects</h2> -->
           <h2 class="white--text font-weight-light">{{languages[model].lang}}</h2>
         </v-row>
       </v-sheet>
@@ -61,7 +62,7 @@
           flat
           width="300"
           class="pa-0 ma-3 d-flex align-center"
-          @click="selectedProject = project; dialog = true"
+          @click="openProject(project); dialog = true"
         >
           <v-img :src="`${project.logo}`"></v-img>
         </v-card>
@@ -69,8 +70,9 @@
     </v-row>
     
 
-    <v-dialog
+    <!-- <v-dialog
       v-model="dialog"
+      v-if="selectedProject !== null"
       width="100%"
     >
       <v-card height="100%" width="100%">
@@ -78,14 +80,14 @@
           <v-col class="pa-0" cols="7">
             <v-carousel height="100%" hide-delimiters :show-arrows="selectedProject.images.length > 1 && selectedProject.images !== undefined ? true : false">
               <v-carousel-item
-                
+                class="py-0 my-0"
                 v-for="(item,i) in selectedProject.images"
                 :key="i.location"
                 :src="item.location"
               ></v-carousel-item>
             </v-carousel>
           </v-col>
-          <v-col cols="5" class="d-flex flex-column justify-space-between">
+          <v-col cols="5" class="d-flex flex-column justify-space-between py-0">
             <v-card-title>{{selectedProject.title}}
               <v-spacer />
                 <span class="subtitle-2">Type: {{selectedProject.type}}</span>
@@ -107,6 +109,25 @@
                 </v-list-item-content>
               </v-list-item>
             </v-list>
+            <v-divider />
+            <v-card-text v-if="selectedProject.client !== ''">
+              <p class="title pb-0 mb-0">Client Feedback</p>
+              <v-row>
+                <v-col cols="3">
+                  <v-avatar
+                    v-if="selectedProject.clientInfo[0].image !== null"
+                    size="120"
+                    tile
+                  >
+                    <v-img :src="`${selectedProject.clientInfo[0].image}`" />
+                  </v-avatar>
+                  {{selectedProject.clientInfo[0].position}} at {{selectedProject.clientInfo[0].company}}
+                </v-col>
+                <v-col cols="9">
+                  "{{selectedProject.clientComments}}"
+                </v-col>
+              </v-row>
+            </v-card-text>
             <v-card-text>
               <div>
                 
@@ -133,24 +154,7 @@
           </v-col>
         </v-row>
       </v-card>
-    </v-dialog>
-
-    <v-snackbar
-      v-model="privateRepo"
-    >
-      Sorry, this is a private Repository
-
-      <template v-slot:action="{ attrs }">
-        <v-btn
-          color="primary"
-          text
-          v-bind="attrs"
-          @click="privateRepo = false"
-        >
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>
+    </v-dialog> -->
   </v-container>
 </template>
 
@@ -162,7 +166,7 @@ export default {
     return {
       show: false,
       model: null,
-      selectedProject: {images: []},
+      selectedProject: null,
       privateRepo: false,
       dialog: false,
       all: 'all',
@@ -194,8 +198,8 @@ export default {
     filterProjects(lang) {
       this.projects = this.$store.state.cards.filter(e => e.tags.includes(`${lang.lang}`))
     },
-    openTab(url){
-      url !== '' ? window.open(url, "_blank") : this.privateRepo = true
+    openProject(project){
+      this.$router.push(`/projects/${project.title}`)
     },
   },
   mounted() {
@@ -218,6 +222,14 @@ export default {
 }
 
 ::v-deep .lang {
+  z-index: 99;
+}
+
+.carousel {
+  max-height: 100%!important;
+}
+
+.title {
   z-index: 99;
 }
 </style>

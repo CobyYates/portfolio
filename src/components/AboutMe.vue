@@ -1,17 +1,20 @@
 <template>
   <v-container fluid class="px-0">
-    <v-card
-        flat
-        color="red"
-        class="card"
+    <v-parallax
+    height="300"
+    class="mx-0"
+    src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
     >
-        <v-row>
-            <v-col>
-                About Me
-            </v-col>
-            <v-col></v-col>
+        <v-row
+            align="center"
+            justify="center"
+        >
+        <v-col class="text-center" cols="12">
+            <h1 class="display-1 font-weight-thin mb-4">About Me</h1>
+            <h4 class="subheading"></h4>
+        </v-col>
         </v-row>
-    </v-card>
+    </v-parallax>
   </v-container>
 </template>
 
