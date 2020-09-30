@@ -1,35 +1,36 @@
 <template>
   <div class="home">
     <div class="hero d-flex flex-column justify-center align-center">
-      <v-avatar size="200px" class="mx-auto" tile>
-        <v-img src="https://i.imgur.com/a8JzMHo.png" />
+      <v-avatar size="200px" class="mx-auto">
+        <v-img src="https://avatars1.githubusercontent.com/u/27262239?s=460&v=4" />
       </v-avatar>
       <div class="text-center white--text aboutMe mt-12">
-        <h1 class="font-weight-medium">Developer, designer & ideator</h1>
-        <h2>I design and develop great looking websites. Learning is my passion.</h2>
+        <h1 class="font-weight-medium">Front-End Developer, Ideator</h1>
+        <h2></h2>
       </div>
     </div>
     <v-row>
       <v-col>
-        <Work class="work" />
+        <h2>My Projects</h2>
+        <Work ref="work" class="work" />
       </v-col>
     </v-row>
-    <v-row>
+    <!-- <v-row>
       <v-col>
         <About class="about" />
       </v-col>
-    </v-row>
+    </v-row> -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import About from "@/components/AboutMe";
+// import About from "@/components/AboutMe";
 import Work from "@/components/Work";
 export default {
   name: "Home",
   components: {
-    About,
+    // About,
     Work,
   },
 };

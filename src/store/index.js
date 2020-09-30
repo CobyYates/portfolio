@@ -32,12 +32,91 @@ export default new Vuex.Store({
         ],
         logo:
           "https://lonepeakvaluation.com/wp-content/uploads/2017/05/LonePeak-Logo-EPS.png",
+        hero:
+          "https://images.pexels.com/photos/3759098/pexels-photo-3759098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         images: [
-          { location: "http://images.coberapps.com/LonePeak.png" },
-          { location: "http://images.coberapps.com/LonePeakMainMenu.png" },
-          { location: "http://images.coberapps.com/LonePeakCase.png" },
+          {
+            location: "http://images.coberapps.com/LonePeak.png",
+            title: "Login",
+            details:
+              "The Login Screen for the application. For authentication, I chose to utilize Firebase. I also used a library called idle-vue in order to automatically logout the user after 1 hour of inactivity.",
+          },
+          {
+            location: "http://images.coberapps.com/Lone_Peak_Case.png",
+            title: "Case Management",
+            details:
+              "This page is for details for each case/client project. On one side there are details pertaining to the case/project itself, and the other side has case tasks and a Richtext editor for the case notes. They also needed to set dates and add those important dates to their outlook calendars. Since they typically don't use Microsoft Edge, I add the dates by downloading the information they need into a custom .ics file which, when opened, opens right into a populated meeting in Microsoft Outlook.",
+          },
+          {
+            location: "http://images.coberapps.com/Lone_Peak_Admin.png",
+            title: "Admin Dashboard",
+            details:
+              "The admin dashboard is for approving cases that have been recently posted for approval, specified changes to any existing cases, a list of new cases, and any cases that are closing soon.",
+          },
+          {
+            location:
+              "http://images.coberapps.com/Lone_Peak_Client_Profile.png",
+            title: "Client Profile",
+            details:
+              "This page is for viewing all of their clients individually along with their cases. The sections on this page show contacts from the selected contacts company as well as upcoming events for the selected contact.",
+          },
+          {
+            location:
+              "http://images.coberapps.com/Lone_Peak_Conflict_Check.png",
+            title: "Conflict Check",
+            details:
+              "This form allows employees to enter new cases for approval. There is logic for adding a new attorney and a new company built into the form. Files can also be uploaded to the server through this form.",
+          },
+          {
+            location: "http://images.coberapps.com/Lone_Peak_Dashboard.png",
+            title: "Personal Dashboard",
+            details:
+              "This is the personal dashboard for each employee when they login. It displays their new tasks, past due tasks, and new comments on the tasks that have been assigned to them. A graph will appear in the bottom right displaying their billable/non-billable hours.",
+          },
+          {
+            location: "http://images.coberapps.com/Lone_Peak_Main_Menu.png",
+            title: "Main Menu",
+            details:
+              "This page filters by employee selected to show all cases, events, and upcoming events. It also can display events and cases for the entire company. Clicking on a case or contact on this page opens that case or contact in other pages.",
+          },
+          {
+            location:
+              "http://images.coberapps.com/Lone_Peak_Marketing_Events.png",
+            title: "Marketing Events",
+            details:
+              "This table shows all the events for the company along with filtering based upon the type of event, what company the event is for, and which employee the event is assigned to.",
+          },
+          {
+            location: "http://images.coberapps.com/Lone_Peak_New_Cases.png",
+            title: "New Cases",
+            details:
+              "This table shows the newest cases that have been created and approved for the company. There is also a slider at the top to display cases that have been added in the last 7-365 days (shown by month).",
+          },
+          {
+            location: "http://images.coberapps.com/Lone_Peak_Task_List.png",
+            title: "Task List",
+            details:
+              "Tasks are extremely important for their employees, so this list has a lot of flexibility. A user can filter by employee, tasks that are assigned to them or they have assigned to others. They can also display incomplete, complete, and all tasks. There is also the option to show open, closed and all cases.",
+          },
+          {
+            location: "http://images.coberapps.com/Lone_Peak_Time_Entry.png",
+            title: "Time Entry",
+            details:
+              "Time entry required a lot of very specific functionality. Each cell had to go through rigorous testing to make sure it functioned exatly the way it should (ex. when clicking on start, it should round to the nearest 5 minutes). Each row gradually filters down as the user selects a case, which then populates the available tasks associated to that case for the given user. A user can also download a .xls file with all the data from their time entries and view a report of all their hours within a selected date range to view and add their time into their other billing software.",
+          },
         ],
-        stage: "Near Complete",
+        stage: "Complete",
+        clientComments:
+          "We hired Coby to develop a web application so that we could more efficiently manage our projects and client relationships. Coby worked very hard over a four-month period – often working 12+ hours days – to meet the agreed upon deadline. As Coby encountered obstacles, he spent his own time to learn and research ways to overcome the obstacles. Coby delivered the project on time and exceeded our expectations. We found Coby’s work to be very reliable without any major bugs or issues. Coby responded within a few hours with a fix for any of the few small bugs that we did find. In addition to exceptional software development skills, Coby was a pleasure to work with. He was always pleasant, open to suggestions, and considerate of others.",
+        clientInfo: [
+          {
+            name: "Matt Germane",
+            company: "Lone Peak Valuation",
+            position: "Principal",
+            image:
+              "https://lonepeakvaluation.com/wp-content/uploads/2018/01/Matt.png",
+          },
+        ],
         tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
       },
       {
@@ -61,8 +140,25 @@ export default new Vuex.Store({
         ],
         logo:
           "https://github.com/CobyYates/northalpine/blob/master/src/assets/logo.jpg?raw=true",
-        images: [{ location: "http://images.coberapps.com/NorthAlpine.png" }],
+        hero:
+          "https://scontent-den4-1.xx.fbcdn.net/v/t1.0-9/119461834_10224969756250740_3395514406448708858_o.jpg?_nc_cat=109&_nc_sid=e3f864&_nc_ohc=VwRsI9CGEPQAX-ePaOQ&_nc_ht=scontent-den4-1.xx&oh=606e4fbad89da660c8cbece5d005bddb&oe=5F97A248",
+        images: [
+          {
+            location: "http://images.coberapps.com/NorthAlpine.png",
+            title: "Temporary Page",
+            details: "This project is still in development and design phase.",
+          },
+        ],
         stage: "In Development",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "Kurt Yates",
+            company: "North Alpine Photography",
+            position: "Owner",
+            image: "",
+          },
+        ],
         tags: ["Vue.js", "Vuetify", "HTML", "CSS", "JavaScript"],
       },
       {
@@ -81,6 +177,7 @@ export default new Vuex.Store({
         ],
         logo:
           "https://www.goodgrindz.com/wp-content/uploads/2019/03/Good-Grindz-Calendar.png",
+        hero: "https://i.imgur.com/9J7fcXB.jpg",
         images: [
           { location: "http://images.coberapps.com/GoodGrindz.png" },
           { location: "http://images.coberapps.com/GoodGrindz2.png" },
@@ -90,6 +187,15 @@ export default new Vuex.Store({
           { location: "http://images.coberapps.com/GoodGrindzFull.png" },
         ],
         stage: "In Development",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "",
+            position: "",
+            image: "",
+          },
+        ],
         tags: ["WordPress"],
       },
       {
@@ -117,6 +223,8 @@ export default new Vuex.Store({
         ],
         logo:
           "https://github.com/CobyYates/Boka/blob/master/src/assets/logo.png?raw=true",
+        hero:
+          "https://images.pexels.com/photos/134469/pexels-photo-134469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         images: [
           { location: "http://images.coberapps.com/BokaHome.png" },
           { location: "http://images.coberapps.com/BokaClients.png" },
@@ -124,6 +232,15 @@ export default new Vuex.Store({
           { location: "http://images.coberapps.com/BokaHomeFull.png" },
         ],
         stage: "In Development",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "Kurt Yates",
+            company: "Boka",
+            position: "Founder",
+            image: "",
+          },
+        ],
         tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
       },
       {
@@ -154,6 +271,15 @@ export default new Vuex.Store({
           "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Utah_Valley_University_seal.svg/1200px-Utah_Valley_University_seal.svg.png",
         images: [{ location: "" }, { location: "" }, { location: "" }],
         stage: "Complete",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "",
+            position: "",
+            image: "",
+          },
+        ],
         tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
       },
       {
@@ -185,6 +311,15 @@ export default new Vuex.Store({
           { location: "http://images.coberapps.com/PokemonFull.png" },
         ],
         stage: "Complete",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "",
+            position: "",
+            image: "",
+          },
+        ],
         tags: ["HTML", "CSS", "JavaScript"],
       },
       {
@@ -216,6 +351,15 @@ export default new Vuex.Store({
           { location: "http://images.coberapps.com/StarWarsFilmsFull.png" },
         ],
         stage: "Complete",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "",
+            position: "",
+            image: "",
+          },
+        ],
         tags: ["HTML", "CSS", "JavaScript"],
       },
       {
@@ -252,6 +396,15 @@ export default new Vuex.Store({
           { location: "http://images.coberapps.com/GarageCarsFull.png" },
         ],
         stage: "Complete",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "",
+            position: "",
+            image: "",
+          },
+        ],
         tags: ["Vue.js", "Vuetify", "HTML", "CSS", "JavaScript"],
       },
       {
@@ -286,6 +439,15 @@ export default new Vuex.Store({
         stage: "Complete",
         warning:
           "This project requires GraphQL to run locally. Information can be found in the GitHub repository",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "",
+            position: "",
+            image: "",
+          },
+        ],
         tags: [
           "Vue.js",
           "Vuetify",
@@ -323,6 +485,15 @@ export default new Vuex.Store({
         logo: "http://images.coberapps.com/Weather.png",
         images: [{ location: "http://images.coberapps.com/Weather.png" }],
         stage: "Complete",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "",
+            position: "",
+            image: "",
+          },
+        ],
         tags: ["React", "Material UI", "HTML", "CSS", "JavaScript"],
       },
       {
@@ -361,6 +532,15 @@ export default new Vuex.Store({
         logo: "http://images.coberapps.com/Pomodoro.png",
         images: [{ location: "http://images.coberapps.com/Pomodoro.png" }],
         stage: "Complete",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "",
+            position: "",
+            image: "",
+          },
+        ],
         tags: ["Vue.js", "Vuetify", "CSS", "JavaScript"],
       },
       {
@@ -389,6 +569,15 @@ export default new Vuex.Store({
           { location: "http://images.coberapps.com/FinalScoreYahtzee.png" },
         ],
         stage: "Complete",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "",
+            position: "",
+            image: "",
+          },
+        ],
         tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
       },
       {
@@ -420,36 +609,17 @@ export default new Vuex.Store({
           { location: "http://images.coberapps.com/Nextjs2.png" },
         ],
         stage: "",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "",
+            position: "",
+            image: "",
+          },
+        ],
         tags: ["Next.js", "HTML", "CSS", "JavaScript", "React"],
       },
-      // {
-      //   title: "",
-      //   github: "",
-      //   type: "",
-      //   live: "",
-      //   description: "",
-      //   requirements: [
-      //     { text: "" },
-      //     { text: "" },
-      //     { text: "" },
-      //   ],
-      //   languages: [
-      //     { icon: "mdi-vuejs", text: "Vue.js", color: "green" },
-      //     { icon: "mdi-vuetify", text: "Vuetify", color: "blue" },
-      //     { icon: "mdi-firebase", text: "Firebase", color: "green" },
-      //     { icon: "mdi-language-javascript", text: "JavaScript", color: "amber" },
-      //     { icon: "mdi-language-html5", text: "HTML", color: "orange" },
-      //     { icon: "mdi-language-css3", text: "CSS", color: "blue" },
-      //   ],
-      //   logo: '',
-      //   images: [
-      //     { location: '' },
-      //     { location: '' },
-      //     { location: '' },
-      //   ],
-      //   stage: '',
-      //   tags: ['Vue.js','Vuetify','Firebase','HTML','CSS','JavaScript']
-      // },
     ],
   },
   mutations: {},
