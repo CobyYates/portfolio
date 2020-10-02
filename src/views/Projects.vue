@@ -4,17 +4,25 @@
     <v-parallax class="mt-0" :src="`${project.hero}`" height="650">
       <v-overlay :absolute="true" :opacity="0.5" :value="true">
         <v-row class="overlayRow pb-12">
-          <v-col cols="6" class="mx-auto">
-            <h1 class="font-weight-normal">{{ project.title }}</h1>
-            <h2 class="font-weight-light">
-              Client: {{ project.clientInfo[0].company }}
-            </h2>
+          <v-col cols="6" class="d-flex justify-center align-center pr-0">
+            <v-img :src="project.projectLogo !== '' ? `${project.projectLogo}` : `${project.logo}`" max-width="150" class="mr-5" contain />
+            <div>
+              <h1 class="font-weight-normal">{{ project.title }}</h1>
+              <h2 class="font-weight-light" v-if="project.clientInfo[0].company !== 'College Project'">
+                Client: {{ project.clientInfo[0].company }}
+              </h2>
+              <h2 class="font-weight-light" v-if="project.clientInfo[0].company === 'College Project'">
+                {{ project.clientInfo[0].company }} (UVU)
+              </h2>
+              <h3 class="font-weight-light">
+                Project Status: <v-chip label :color="project.stage === 'Complete' ? 'green' : 'amber darken-3'">{{ project.stage }}</v-chip>
+              </h3>
+            </div>
+            <v-divider vertical class="pl-12" />
           </v-col>
-        </v-row>
-        <v-row v-if="project.clientComments !== ''">
-          <v-col>
-            <v-row class="align-center">
-              <v-col cols="1 ml-auto">
+          <v-col cols="6" v-if="project.clientComments !== ''" class="mt-12">
+            <v-row>
+              <v-col cols="3" class="d-flex flex-column justify-center pl-12">
                 <v-avatar
                   v-if="project.clientInfo[0].image !== null"
                   size="120"
@@ -25,7 +33,7 @@
                 <p>{{ project.clientInfo[0].position }} at
                 {{ project.clientInfo[0].company }}</p>
               </v-col>
-              <v-col cols="9" class="mr-auto"> "{{ project.clientComments }}" </v-col>
+              <v-col cols="9" > "{{ project.clientComments }}" </v-col>
             </v-row>
           </v-col>
         </v-row>
@@ -38,7 +46,7 @@
       >
         <h2 class="display-2 font-weight-thin">PROJECT SPECS</h2>
       </v-col>
-      <v-col xl="6" class="d-flex flex-column justify-center pl-12">
+      <v-col xl="6" class="d-flex flex-column justify-center ">
         <div>
           <h4>Languages used in project:</h4>
           <v-chip
@@ -89,13 +97,19 @@
       :key="image.i"
       :class="i % 2 == 0 ? '' : 'd-flex flex-row-reverse'"
     >
-      <v-col xl="6" class="pa-0 ma-0">
+      <v-col sm="12" md="6" lg="6" xl="6" class="pa-0 ma-0">
         <center>
-          <v-img :src="image.location" />
+          <v-skeleton-loader
+            class="mx-auto"
+            max-width="100%"
+            type="image"
+          >
+            <v-img :src="image.location" />
+          </v-skeleton-loader>
         </center>
       </v-col>
       <v-col
-        xl="6"
+        sm="12" md="6" lg="6" xl="6"
         class="d-flex flex-column justify-center align-center blue-grey darken-2"
       >
         <h2 class="white--text text-wrap px-10 pb-8 font-weight-thin">{{ image.title.toUpperCase() }}</h2>
@@ -105,7 +119,7 @@
       </v-col>
     </v-row>
     <v-snackbar v-model="privateRepo">
-      Sorry, this is a private Repository
+      Sorry, this is a private Repository / Site
 
       <template v-slot:action="{ attrs }">
         <v-btn color="primary" text v-bind="attrs" @click="privateRepo = false">
@@ -132,7 +146,7 @@ export default {
       url !== "" ? window.open(url, "_blank") : (this.privateRepo = true);
     },
   },
-  mounted() {
+  created() {
     window.scrollTo(0, 0)
     this.project = this.$store.state.cards.filter(
       (e) => e.title === this.$route.params.id
@@ -151,7 +165,7 @@ export default {
 }
 
 .overlayRow {
-  width: 70vw;
+  width: 80vw;
 }
 
 .divider {

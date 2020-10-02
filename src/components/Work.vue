@@ -18,8 +18,7 @@
           align="center"
           justify="center"
         >
-          <!-- <h2 id="title" class="white--text">My Projects</h2> -->
-          <h2 class="white--text font-weight-light">{{languages[model].lang}}</h2>
+          <h2 class="white--text font-weight-light lang">{{languages[model].lang}}</h2>
         </v-row>
       </v-sheet>
     </v-expand-transition>
@@ -68,93 +67,6 @@
         </v-card>
       </v-col>
     </v-row>
-    
-
-    <!-- <v-dialog
-      v-model="dialog"
-      v-if="selectedProject !== null"
-      width="100%"
-    >
-      <v-card height="100%" width="100%">
-        <v-row class="pa-0 ma-0">
-          <v-col class="pa-0" cols="7">
-            <v-carousel height="100%" hide-delimiters :show-arrows="selectedProject.images.length > 1 && selectedProject.images !== undefined ? true : false">
-              <v-carousel-item
-                class="py-0 my-0"
-                v-for="(item,i) in selectedProject.images"
-                :key="i.location"
-                :src="item.location"
-              ></v-carousel-item>
-            </v-carousel>
-          </v-col>
-          <v-col cols="5" class="d-flex flex-column justify-space-between py-0">
-            <v-card-title>{{selectedProject.title}}
-              <v-spacer />
-                <span class="subtitle-2">Type: {{selectedProject.type}}</span>
-            </v-card-title>
-            <v-card-subtitle>
-                Stage: {{selectedProject.stage}}
-            </v-card-subtitle>
-            <v-divider />
-            <v-card-subtitle>{{selectedProject.description}}</v-card-subtitle>
-            <v-list>
-              <v-subheader>Requirements</v-subheader>
-              <v-list-item
-                v-for="(item, i) in selectedProject.requirements"
-                :key="i"
-                dense
-              >
-                <v-list-item-content>
-                  <v-list-item-title>- {{item.text}}</v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </v-list>
-            <v-divider />
-            <v-card-text v-if="selectedProject.client !== ''">
-              <p class="title pb-0 mb-0">Client Feedback</p>
-              <v-row>
-                <v-col cols="3">
-                  <v-avatar
-                    v-if="selectedProject.clientInfo[0].image !== null"
-                    size="120"
-                    tile
-                  >
-                    <v-img :src="`${selectedProject.clientInfo[0].image}`" />
-                  </v-avatar>
-                  {{selectedProject.clientInfo[0].position}} at {{selectedProject.clientInfo[0].company}}
-                </v-col>
-                <v-col cols="9">
-                  "{{selectedProject.clientComments}}"
-                </v-col>
-              </v-row>
-            </v-card-text>
-            <v-card-text>
-              <div>
-                
-              </div>
-              <div>
-                <p class="title mb-0 mt-1">Languages Used</p>
-                <v-chip
-                  v-for="item in selectedProject.languages"
-                  :key="item.i"
-                  class="ma-2"
-                  color="grey lighten-3"
-                  label
-                >
-                  <v-icon :color="item.color" left>{{item.icon}}</v-icon>
-                  {{item.text}}
-                </v-chip>
-              </div>
-            </v-card-text>
-              <v-card-actions>
-                <v-spacer />
-                <v-btn color="primary" @click="openTab(selectedProject.live)" text class="mt-4"><v-icon left>mdi-open-in-new</v-icon>View Live Site</v-btn>
-                <v-btn color="black" @click="openTab(selectedProject.github)" text class="mt-4"><v-icon left>mdi-github</v-icon>View Repository</v-btn>
-              </v-card-actions>
-          </v-col>
-        </v-row>
-      </v-card>
-    </v-dialog> -->
   </v-container>
 </template>
 
@@ -230,6 +142,10 @@ export default {
 }
 
 .title {
+  z-index: 99;
+}
+
+.lang {
   z-index: 99;
 }
 </style>

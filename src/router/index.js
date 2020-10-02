@@ -16,7 +16,16 @@ const routes = [
     component: function() {
       return import(/* webpackChunkName: "projects" */ "../views/Projects.vue");
     }
-  }
+  },
+  {
+    path: "/recommendations",
+    name: "Recommendation",
+    component: function() {
+      return import(
+        /* webpackChunkName: "recommendation" */ "../views/Recommendation.vue"
+      );
+    }
+  },
 ];
 
 const router = new VueRouter({

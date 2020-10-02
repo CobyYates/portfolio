@@ -1,7 +1,5 @@
 <template>
   <v-app id="inspire">
-    <vueHeadful :title="'Coby Yates | Portfolio'" />
-
     <v-app-bar
       app
       dense
@@ -19,6 +17,7 @@
       <!-- <p class="my-auto pl-3 title font-weight-light">Coby Yates</p> -->
     <v-spacer />
       <!-- <v-btn text>Home</v-btn> -->
+      <v-btn text to="/recommendations">Recommendations</v-btn>
       <v-btn text @click="openPDF()">Resume<v-icon right>mdi-download</v-icon></v-btn>
     </v-app-bar>
     
@@ -32,13 +31,9 @@
 </template>
 
 <script>
-import vueHeadful from "vue-headful";
   export default {
     props: {
       source: String,
-    },
-    components: {
-      vueHeadful
     },
     data: () => ({
       drawer: null,

@@ -5,12 +5,72 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    langs: [
+      { title: "Vue.js", icon: "mdi-vuejs", color: "green" },
+      { title: "HTML", icon: "mdi-language-html5", color: "orange" },
+      { title: "CSS", icon: "mdi-language-css3", color: "blue" },
+      { title: "JavaScript", icon: "mdi-language-javascript", color: "yellow" },
+      { title: "SASS", icon: "mdi-sass", color: "pink" },
+      { title: "LESS", icon: "mdi-code-tags", color: "green" },
+      { title: "C#", icon: "mdi-language-csharp", color: "purple" },
+      { title: "C++", icon: "mdi-language-cpp", color: "blue" },
+    ],
+    frameworks: [
+      { title: "Vuetify", icon: "mdi-vuejs", color: "blue" },
+      { title: "Bootstrap", icon: "mdi-bootstrap", color: "purple" },
+      { title: "Flexbox", icon: "mdi-language-css3", color: "orange" },
+      { title: "CSS Grid", icon: "mdi-language-css3", color: "blue" },
+    ],
+    softwares: [
+      { title: "VS Code", icon: "mdi-visual-studio-code", color: "blue" },
+      { title: "Adobe Illustrator", icon: "mdi-adobe", color: "red" },
+      { title: "Adobe InDesign", icon: "mdi-adobe", color: "red" },
+      { title: "Adobe XD", icon: "mdi-adobe", color: "red" },
+      { title: "Google Sketchup", icon: "mdi-google", color: "green" },
+      { title: "Xactimate", icon: "mdi-alpha-x-circle", color: "blue" },
+      { title: "FileZilla", icon: "mdi-upload-multiple", color: "red" },
+    ],
+    additionals: [
+      { title: "Netlify", icon: "mdi-server", color: "teal" },
+      { title: "UX/UI Design", icon: "mdi-pencil-ruler", color: "orange" },
+      { title: "WordPress", icon: "mdi-wordpress", color: "blue" },
+      { title: "Bluehost", icon: "mdi-view-dashboard", color: "blue" },
+      { title: "Git Certified", icon: "mdi-git", color: "pink" },
+      { title: "A+ Training", icon: "mdi-desktop-tower", color: "white" },
+      { title: "App Design", icon: "mdi-pencil-ruler", color: "orange" },
+    ],
+    experiences: [
+      { title: "Node.js", icon: "mdi-nodejs", color: "green" },
+      { title: "MongoDB", icon: "mdi-nodejs", color: "green" },
+      { title: "Express", icon: "mdi-nodejs", color: "blue" },
+      { title: "Mongoose", icon: "mdi-nodejs", color: "blue" },
+      { title: "React", icon: "mdi-react", color: "blue" },
+      { title: "Next.js", icon: "mdi-react", color: "blue" },
+    ],
+    about: [
+      {
+        bio:
+          "My name is Coby, I live in Herriman, UT with my wife and daughters. My wife and I love to travel when we get time and have been to Europe and South America since being married.",
+      },
+      {
+        bio:
+          "I enjoy <strong>paddleboarding, frisbee golf, fly fishing, listening to podcasts, and watching Twitch streamers.</strong> I love to <strong>travel</strong> and think up new <strong>business ideas</strong>.",
+      },
+      {
+        bio:
+          "I graduated from Utah Valley University with a <strong>Bachelors degree in Web and App Development</strong> August 14, 2020. I'm currently <strong>looking for employment</strong> as a front-end web developer or full-stack developer. I really enjoy learning new languages and techniques in programming and am open to learning anything. I'm glad that I decided to go into a career path that excites me and I enjoy.",
+      },
+      {
+        bio:
+          "Some of my skills include <strong>Project Management</strong>, <strong>Programming</strong>, <strong>Client Relations</strong>, and being the<strong> 'Go To Guy'</strong> for most things tech or ideation. I was the project manager on most of the teams I was on in college and I have gained great relationships with people who were clients of organizations I worked for.",
+      },
+    ],
     cards: [
       {
         title: "Lone Peak Client Management",
         github: "",
         type: "Freelance",
-        live: "http://cms.lonepeakvaluation.com",
+        live: "",
         description: "A web app for keeping track of their clients and cases",
         requirements: [
           { text: "Create a web application to live on a subdomain" },
@@ -32,6 +92,8 @@ export default new Vuex.Store({
         ],
         logo:
           "https://lonepeakvaluation.com/wp-content/uploads/2017/05/LonePeak-Logo-EPS.png",
+        projectLogo:
+          "https://lonepeakvaluation.com/wp-content/uploads/2017/05/cropped-LPVG-square-logo.jpg",
         hero:
           "https://images.pexels.com/photos/3759098/pexels-photo-3759098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         images: [
@@ -125,8 +187,13 @@ export default new Vuex.Store({
         type: "Freelance",
         live: "http://northalpinephoto.com/",
         description:
-          "A portfolio site for a photographer and drone operator. He needed a way for him to be contacted and show of his work. I offered to do his website for him since he is my brother.",
-        requirements: [{ text: "" }],
+          "A portfolio site for a photographer and drone operator. He needed a way for him to be contacted and show off his work. I offered to do his website for him since he is my brother.",
+        requirements: [
+          { text: "Create a website that displays his images in a gallary" },
+          { text: "Display contact information" },
+          { text: "Create a contact form" },
+          { text: "Impliment email hosting and configuration" },
+        ],
         languages: [
           { icon: "mdi-vuejs", text: "Vue.js", color: "green" },
           { icon: "mdi-vuetify", text: "Vuetify", color: "blue" },
@@ -140,6 +207,7 @@ export default new Vuex.Store({
         ],
         logo:
           "https://github.com/CobyYates/northalpine/blob/master/src/assets/logo.jpg?raw=true",
+        projectLogo: "http://northalpinephoto.com/img/logo.c628b8e4.jpg",
         hero:
           "https://scontent-den4-1.xx.fbcdn.net/v/t1.0-9/119461834_10224969756250740_3395514406448708858_o.jpg?_nc_cat=109&_nc_sid=e3f864&_nc_ohc=VwRsI9CGEPQAX-ePaOQ&_nc_ht=scontent-den4-1.xx&oh=606e4fbad89da660c8cbece5d005bddb&oe=5F97A248",
         images: [
@@ -177,21 +245,44 @@ export default new Vuex.Store({
         ],
         logo:
           "https://www.goodgrindz.com/wp-content/uploads/2019/03/Good-Grindz-Calendar.png",
+        projectLogo: "",
         hero: "https://i.imgur.com/9J7fcXB.jpg",
         images: [
-          { location: "http://images.coberapps.com/GoodGrindz.png" },
-          { location: "http://images.coberapps.com/GoodGrindz2.png" },
-          { location: "http://images.coberapps.com/GoodGrindz3.png" },
-          { location: "http://images.coberapps.com/GoodGrindz4.png" },
-          { location: "http://images.coberapps.com/GoodGrindzHomeFull.png" },
-          { location: "http://images.coberapps.com/GoodGrindzFull.png" },
+          {
+            location: "http://images.coberapps.com/GoodGrindz.png",
+            title: "Home Page",
+            details: "",
+          },
+          {
+            location: "http://images.coberapps.com/GoodGrindz2.png",
+            title: "Reviews",
+            details:
+              "As a business, their reviews are a great marketing tool to draw customers in. These are located on the home page to make them easy to find.",
+          },
+          {
+            location: "http://images.coberapps.com/GoodGrindz3.png",
+            title: "Menu",
+            details: "Just waiting on images and content from their team.",
+          },
+          {
+            location: "http://images.coberapps.com/GoodGrindz4.png",
+            title: "Footer",
+            details:
+              "The footer includes their contact information as well as their addresses so people can find their locations easily.",
+          },
+          {
+            location: "http://images.coberapps.com/GoodGrindzFull.png",
+            title: "Full Menu",
+            details:
+              "Just waiting for content to come in from their team. Once all the content is provided, this page can be updated and launched.",
+          },
         ],
         stage: "In Development",
         clientComments: "",
         clientInfo: [
           {
             name: "",
-            company: "",
+            company: "Good Grindz",
             position: "",
             image: "",
           },
@@ -223,13 +314,34 @@ export default new Vuex.Store({
         ],
         logo:
           "https://github.com/CobyYates/Boka/blob/master/src/assets/logo.png?raw=true",
+        projectLogo: "",
         hero:
           "https://images.pexels.com/photos/134469/pexels-photo-134469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         images: [
-          { location: "http://images.coberapps.com/BokaHome.png" },
-          { location: "http://images.coberapps.com/BokaClients.png" },
-          { location: "http://images.coberapps.com/BokaToDo.png" },
-          { location: "http://images.coberapps.com/BokaHomeFull.png" },
+          {
+            location: "http://images.coberapps.com/BokaHome.png",
+            title: "Home Page",
+            details:
+              "This website is for content creators so knowing what types of resources this website has is critical to know from the beginning. The user can start by creating an account and logging in. They can also just search for content creators by type displayed under the hero image.",
+          },
+          {
+            location: "http://images.coberapps.com/BokaClients.png",
+            title: "Clients",
+            details:
+              "This page displays a list of clients that have requested to hire the content creator. The creator can see their clients/potential clients as well as their payments, and if they were accepted as a client or not.",
+          },
+          {
+            location: "http://images.coberapps.com/BokaToDo.png",
+            title: "To Do List",
+            details:
+              "This is where the user can add, edit and delete tasks that they have for their projects and personal business needs. They can also create labels to organize their tasks better.",
+          },
+          {
+            location: "http://images.coberapps.com/BokaHomeFull.png",
+            title: "Home Page",
+            details:
+              "This page explains the purpose and features of the site. A user can search for content creators by type, and see reviews. This project is currently on hold.",
+          },
         ],
         stage: "In Development",
         clientComments: "",
@@ -269,13 +381,20 @@ export default new Vuex.Store({
         ],
         logo:
           "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Utah_Valley_University_seal.svg/1200px-Utah_Valley_University_seal.svg.png",
-        images: [{ location: "" }, { location: "" }, { location: "" }],
+        projectLogo: "",
+        hero:
+          "https://images.pexels.com/photos/3921000/pexels-photo-3921000.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        // images: [
+        //   { location: "", title: "", details: "" },
+        //   { location: "", title: "", details: "" },
+        //   { location: "", title: "", details: "" },
+        // ],
         stage: "Complete",
         clientComments: "",
         clientInfo: [
           {
             name: "",
-            company: "",
+            company: "Utah Valley University - Digital Cinema Dept.",
             position: "",
             image: "",
           },
@@ -305,17 +424,34 @@ export default new Vuex.Store({
         ],
         logo:
           "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png",
+        hero:
+          "https://images.pexels.com/photos/1310847/pexels-photo-1310847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        projectLogo: "",
         images: [
-          { location: "http://images.coberapps.com/Pokemon.png" },
-          { location: "http://images.coberapps.com/PokemonFilter.png" },
-          { location: "http://images.coberapps.com/PokemonFull.png" },
+          {
+            location: "http://images.coberapps.com/Pokemon.png",
+            title: "Main Page",
+            details:
+              "A list of Pokemon fetched from the PokeAPI and displayed in a card layout. ",
+          },
+          {
+            location: "http://images.coberapps.com/PokemonFilter.png",
+            title: "Filtering Pokemon",
+            details:
+              "The Pokemon on the main page can be filtered by type (ie. Fire, Water, etc...). This uses an array filter to filter all the fetched Pokemon by type.",
+          },
+          {
+            location: "http://images.coberapps.com/PokemonFull.png",
+            title: "",
+            details: "",
+          },
         ],
         stage: "Complete",
         clientComments: "",
         clientInfo: [
           {
             name: "",
-            company: "",
+            company: "College Project",
             position: "",
             image: "",
           },
@@ -346,16 +482,28 @@ export default new Vuex.Store({
         ],
         logo:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1280px-Star_Wars_Logo.svg.png",
+        hero:
+          "https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        projectLogo:
+          "https://maxcdn.icons8.com/Share/icon/Logos/star_wars1600.png",
         images: [
-          { location: "http://images.coberapps.com/StarWarsPeople.png" },
-          { location: "http://images.coberapps.com/StarWarsFilmsFull.png" },
+          {
+            location: "http://images.coberapps.com/StarWarsPeople.png",
+            title: "",
+            details: "",
+          },
+          {
+            location: "http://images.coberapps.com/StarWarsFilmsFull.png",
+            title: "",
+            details: "",
+          },
         ],
         stage: "Complete",
         clientComments: "",
         clientInfo: [
           {
             name: "",
-            company: "",
+            company: "College Project",
             position: "",
             image: "",
           },
@@ -390,17 +538,32 @@ export default new Vuex.Store({
           { icon: "mdi-language-css3", text: "CSS", color: "blue" },
         ],
         logo: "http://images.coberapps.com/GarageCarsOpen.png",
+        hero:
+          "https://images.pexels.com/photos/3031749/pexels-photo-3031749.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        projectLogo: "",
         images: [
-          { location: "http://images.coberapps.com/Garage.png" },
-          { location: "http://images.coberapps.com/GarageCarsOpen.png" },
-          { location: "http://images.coberapps.com/GarageCarsFull.png" },
+          {
+            location: "http://images.coberapps.com/Garage.png",
+            title: "",
+            details: "",
+          },
+          {
+            location: "http://images.coberapps.com/GarageCarsOpen.png",
+            title: "",
+            details: "",
+          },
+          {
+            location: "http://images.coberapps.com/GarageCarsFull.png",
+            title: "",
+            details: "",
+          },
         ],
         stage: "Complete",
         clientComments: "",
         clientInfo: [
           {
             name: "",
-            company: "",
+            company: "College Project",
             position: "",
             image: "",
           },
@@ -435,7 +598,12 @@ export default new Vuex.Store({
           { icon: "mdi-database", text: "MongoDB", color: "green" },
         ],
         logo: "http://images.coberapps.com/GarageCarsOpen.png",
-        images: [{ location: "" }, { location: "" }, { location: "" }],
+        projectLogo: "",
+        images: [
+          { location: "", title: "", details: "" },
+          { location: "", title: "", details: "" },
+          { location: "", title: "", details: "" },
+        ],
         stage: "Complete",
         warning:
           "This project requires GraphQL to run locally. Information can be found in the GitHub repository",
@@ -443,7 +611,7 @@ export default new Vuex.Store({
         clientInfo: [
           {
             name: "",
-            company: "",
+            company: "College Project",
             position: "",
             image: "",
           },
@@ -483,13 +651,22 @@ export default new Vuex.Store({
           { icon: "mdi-language-css3", text: "CSS", color: "blue" },
         ],
         logo: "http://images.coberapps.com/Weather.png",
-        images: [{ location: "http://images.coberapps.com/Weather.png" }],
+        hero:
+          "https://images.pexels.com/photos/1463530/pexels-photo-1463530.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        projectLogo: "",
+        images: [
+          {
+            location: "http://images.coberapps.com/Weather.png",
+            title: "",
+            details: "",
+          },
+        ],
         stage: "Complete",
         clientComments: "",
         clientInfo: [
           {
             name: "",
-            company: "",
+            company: "College Project",
             position: "",
             image: "",
           },
@@ -530,13 +707,22 @@ export default new Vuex.Store({
           { icon: "mdi-language-css3", text: "CSS", color: "blue" },
         ],
         logo: "http://images.coberapps.com/Pomodoro.png",
-        images: [{ location: "http://images.coberapps.com/Pomodoro.png" }],
+        hero:
+          "https://images.pexels.com/photos/280254/pexels-photo-280254.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        projectLogo: "",
+        images: [
+          {
+            location: "http://images.coberapps.com/Pomodoro.png",
+            title: "",
+            details: "",
+          },
+        ],
         stage: "Complete",
         clientComments: "",
         clientInfo: [
           {
             name: "",
-            company: "",
+            company: "College Project",
             position: "",
             image: "",
           },
@@ -564,16 +750,27 @@ export default new Vuex.Store({
           { icon: "mdi-language-css3", text: "CSS", color: "blue" },
         ],
         logo: "http://images.coberapps.com/FinalScoreYahtzee.png",
+        hero:
+          "https://images.pexels.com/photos/965879/pexels-photo-965879.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        projectLogo: "",
         images: [
-          { location: "http://images.coberapps.com/FinalScoreHome.png" },
-          { location: "http://images.coberapps.com/FinalScoreYahtzee.png" },
+          {
+            location: "http://images.coberapps.com/FinalScoreHome.png",
+            title: "",
+            details: "",
+          },
+          {
+            location: "http://images.coberapps.com/FinalScoreYahtzee.png",
+            title: "",
+            details: "",
+          },
         ],
         stage: "Complete",
         clientComments: "",
         clientInfo: [
           {
             name: "",
-            company: "",
+            company: "College Project",
             position: "",
             image: "",
           },
@@ -604,16 +801,27 @@ export default new Vuex.Store({
           { icon: "mdi-language-html5", text: "HTML", color: "orange" },
         ],
         logo: "http://images.coberapps.com/Nextjs2.png",
+        hero:
+          "https://images.pexels.com/photos/1310847/pexels-photo-1310847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        projectLogo: "",
         images: [
-          { location: "http://images.coberapps.com/Nextjs.png" },
-          { location: "http://images.coberapps.com/Nextjs2.png" },
+          {
+            location: "http://images.coberapps.com/Nextjs.png",
+            title: "",
+            details: "",
+          },
+          {
+            location: "http://images.coberapps.com/Nextjs2.png",
+            title: "",
+            details: "",
+          },
         ],
-        stage: "",
+        stage: "Complete",
         clientComments: "",
         clientInfo: [
           {
             name: "",
-            company: "",
+            company: "College Project",
             position: "",
             image: "",
           },
