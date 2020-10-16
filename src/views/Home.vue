@@ -1,86 +1,144 @@
 <template>
   <div class="home">
     <vueHeadful :title="'Coby Yates | Portfolio'" />
-    <div class="hero d-flex flex-column justify-center align-center">
-      <h1 class="white--text font-weight-light">{{name}}</h1>
-      <div class="text-center white--text aboutMe mt-6">
-        <h2 class="font-weight-light ">Front-End Developer</h2>
-        <h3></h3>
-      </div>
-    </div>
+    <v-row id="top" v-on:scroll.passive="handleScroll" class="pt-0 mt-0 daRow">
+      <v-col class="pt-0 mt-0">
+        <v-parallax
+          src="https://images.pexels.com/photos/773953/pexels-photo-773953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+          :height="heightVH"
+        >
+          <v-overlay :absolute="true" :opacity="0.3 " :value="true">
+            <div class="hero d-flex flex-column justify-center align-center">
+              <h1 class="white--text">{{ name }}</h1>
+              <div class="text-center white--text  mt-6">
+                <h2 class="green--text display-1 text-no-wrap text-center">Front-End Developer</h2>
+                <a href="#education" v-smooth-scroll><v-icon size="70">mdi-chevron-double-down</v-icon></a>
+              </div>
+            </div>
+          </v-overlay>
+        </v-parallax>
+      </v-col>
+    </v-row>
+    
     <v-row class="work">
       <v-col>
-        <Work id="work" ref="work" />
+        <Education id="education" />
+      </v-col>
+    </v-row>
+    <v-row class="work">
+      <v-col>
+        <Experience class="mt-12" />
       </v-col>
     </v-row>
     <v-row class="grey lighten-3 py-12">
       <v-col cols="12">
         <v-row class="px-12 pt-12">
-          <v-col sm="12" md="6">
-            <v-img width="50%" class="mx-auto my-auto elevation-6" src="http://images.coberapps.com/bio.jpg" />
+          <v-col sm="12" md="4">
+            <v-img
+              width="80%"
+              class="mx-auto my-auto elevation-6"
+              src="http://images.coberapps.com/about_Me.jpg"
+            />
           </v-col>
           <v-col
             sm="12"
-            md="6"
-            class="d-flex flex-column justify-center align-center"
+            md="8"
+            class="d-flex flex-column align-center"
           >
-            <h2 class="text-center">BIO</h2>
+          <h2 class="text-center font-weight-light green--text mb-8">ABOUT ME</h2>
+          <div class="d-flex flex-column justify-space-between">
             <p
               v-html="item.bio"
               v-for="item in $store.state.about"
               :key="item.i"
             ></p>
+          </div>
           </v-col>
         </v-row>
       </v-col>
     </v-row>
-    <Skills />
+    <v-row>
+      <v-col>
+        <Projects class="mt-12" />
+      </v-col>
+    </v-row>
+      <Skills />
+      <a class="back pr-3" href="#top" v-smooth-scroll><v-btn><v-icon large color="blue">mdi-chevron-up</v-icon></v-btn></a>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Work from "@/components/Work";
+// import Work from "@/components/Work";
 import Skills from "@/components/Skills";
+import Education from "@/components/Education";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 import vueHeadful from "vue-headful";
+
+
 export default {
   name: "Home",
   components: {
-    Work,
+    // Work,
+    Education,
+    Experience,
+    Projects,
     Skills,
     vueHeadful,
   },
-  data () {
+  data() {
     return {
-      name: '< Coby Yates />'
+      name: "Coby Yates",
+      heightVH: `${window.innerHeight}`,
     }
-  }
-};
+  },
+  methods: {
+    handleScroll(e) {
+    if ((e.target.scrollHeight-300) <= e.target.scrollTop) {
+      console.log('helo')
+    }
+    }
+  },
+  mounted: function () {
+      window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed: function () {
+      window.removeEventListener('scroll', this.handleScroll);
+  },
+  created() {
+    window.scrollTo(0, 0)
+  },
+}
 </script>
 
 <style scoped>
+
+.back {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
 .hero {
-  background-color: #262e37;
-  height: 70vh;
-  z-index: 0;
-  margin: 0;
+  height: 100vh !important;
+}
+
+.hero img {
+  margin-top: -200px !important;
 }
 
 h1 {
   font-size: 65px;
 }
 
-.hero:before {
-  content: "";
-  position: absolute;
-  top: 70vh;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  background: #262e37;
-  transform: skew(-83deg);
-  transform-origin: top;
-  z-index: 0;
+.daRow {
+  height: 105vh!important;
 }
 
 .aboutMe {
@@ -93,7 +151,7 @@ h1 {
 }
 
 ::v-deep .over .v-overlay__scrim {
-  max-height: 480px!important;
+  max-height: 480px !important;
 }
 
 .work {

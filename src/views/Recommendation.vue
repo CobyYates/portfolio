@@ -2,9 +2,9 @@
   <v-container class="pa-0" fluid>
     <vueHeadful title="Coby Yates | Recommendations" />
     <v-parallax
-      src="https://images.pexels.com/photos/40973/background-brown-circle-cut-40973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      src="https://images.pexels.com/photos/85745/pexels-photo-85745.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
       class="mt-0 mb-5"
-      height="650">
+      height="850">
       <v-overlay :absolute="true" :opacity="0.5" :value="true">
         <v-row>
           <v-col cols="9" class="mx-auto">
@@ -22,10 +22,10 @@
     >
       <v-col>
         <v-card
-          color="#385F73"
+          color="grey lighten-4"
           height="auto"
           width="90%"
-          elevation="8"
+          elevation="4"
           class="mx-auto my-2"
         >
         <div class="d-flex align-end">
@@ -37,11 +37,11 @@
             <v-img :src="`${item.image}`" />
           </v-avatar>
           <div>
-            <v-card-title class="white--text">{{item.name}}</v-card-title>
-            <v-card-subtitle class="white--text body-1 font-weight-light py-0">{{item.position}} -  {{item.company}}</v-card-subtitle>
+            <v-card-title class="black--text">{{item.name}}</v-card-title>
+            <v-card-subtitle class="black--text body-1 font-weight-light py-0">{{item.position}} -  {{item.company}}</v-card-subtitle>
           </div>
         </div>
-        <v-card-text class="body-1 font-weight-light white--text">
+        <v-card-text class="body-1 font-weight-light black--text">
           "{{item.review}}"
         </v-card-text>
 

@@ -17,8 +17,9 @@
       <!-- <p class="my-auto pl-3 title font-weight-light">Coby Yates</p> -->
     <v-spacer />
       <!-- <v-btn text>Home</v-btn> -->
-      <v-btn text to="/recommendations">Recommendations</v-btn>
-      <v-btn text @click="openPDF()">Resume<v-icon right>mdi-download</v-icon></v-btn>
+      <v-btn color="green darken-1" text to="/work">All Work</v-btn>
+      <v-btn color="green darken-1" text to="/recommendations">Recommendations</v-btn>
+      <v-btn color="green darken-1" text @click="openPDF()">Resume<v-icon right>mdi-download</v-icon></v-btn>
     </v-app-bar>
     
     <v-main class="content">

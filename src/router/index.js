@@ -8,14 +8,14 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
   },
   {
     path: "/projects/:id",
     name: "Projects",
     component: function() {
       return import(/* webpackChunkName: "projects" */ "../views/Projects.vue");
-    }
+    },
   },
   {
     path: "/recommendations",
@@ -24,7 +24,16 @@ const routes = [
       return import(
         /* webpackChunkName: "recommendation" */ "../views/Recommendation.vue"
       );
-    }
+    },
+  },
+  {
+    path: "/work",
+    name: "Work",
+    component: function() {
+      return import(
+        /* webpackChunkName: "work" */ "../views/Work.vue"
+      );
+    },
   },
 ];
 

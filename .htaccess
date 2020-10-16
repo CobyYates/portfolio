@@ -1,0 +1,17 @@
+
+RewriteEngine on
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^coberapps\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.coberapps\.com$
+RewriteRule ^/?$ "https\:\/\/coberapps\.com\/" [R=301,L]
+
+AddHandler application/x-httpd-ea-php72 .php
+<IfModule mod_rewrite.c>
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

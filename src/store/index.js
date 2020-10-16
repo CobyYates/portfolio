@@ -9,43 +9,231 @@ export default new Vuex.Store({
       { title: "Vue.js", icon: "mdi-vuejs", color: "green" },
       { title: "HTML", icon: "mdi-language-html5", color: "orange" },
       { title: "CSS", icon: "mdi-language-css3", color: "blue" },
-      { title: "JavaScript", icon: "mdi-language-javascript", color: "yellow" },
+      { title: "JavaScript", icon: "mdi-language-javascript", color: "amber" },
       { title: "SASS", icon: "mdi-sass", color: "pink" },
       { title: "LESS", icon: "mdi-code-tags", color: "green" },
-      { title: "C#", icon: "mdi-language-csharp", color: "purple" },
-      { title: "C++", icon: "mdi-language-cpp", color: "blue" },
     ],
     frameworks: [
-      { title: "Vuetify", icon: "mdi-vuejs", color: "blue" },
-      { title: "Bootstrap", icon: "mdi-bootstrap", color: "purple" },
+      { title: "Vuetify", icon: "mdi-vuetify", color: "blue" },
       { title: "Flexbox", icon: "mdi-language-css3", color: "orange" },
       { title: "CSS Grid", icon: "mdi-language-css3", color: "blue" },
+      { title: "Bootstrap", icon: "mdi-bootstrap", color: "purple" },
     ],
     softwares: [
-      { title: "VS Code", icon: "mdi-visual-studio-code", color: "blue" },
+      {
+        title: "VS Code",
+        icon: "mdi-microsoft-visual-studio-code",
+        color: "blue",
+      },
       { title: "Adobe Illustrator", icon: "mdi-adobe", color: "red" },
       { title: "Adobe InDesign", icon: "mdi-adobe", color: "red" },
       { title: "Adobe XD", icon: "mdi-adobe", color: "red" },
+      { title: "FileZilla", icon: "mdi-upload-multiple", color: "red" },
       { title: "Google Sketchup", icon: "mdi-google", color: "green" },
       { title: "Xactimate", icon: "mdi-alpha-x-circle", color: "blue" },
-      { title: "FileZilla", icon: "mdi-upload-multiple", color: "red" },
     ],
     additionals: [
       { title: "Netlify", icon: "mdi-server", color: "teal" },
+      { title: "Git Certified", icon: "mdi-git", color: "pink" },
       { title: "UX/UI Design", icon: "mdi-pencil-ruler", color: "orange" },
       { title: "WordPress", icon: "mdi-wordpress", color: "blue" },
-      { title: "Bluehost", icon: "mdi-view-dashboard", color: "blue" },
-      { title: "Git Certified", icon: "mdi-git", color: "pink" },
-      { title: "A+ Training", icon: "mdi-desktop-tower", color: "white" },
+      { title: "Bluehost Hosting", icon: "mdi-apps", color: "blue" },
+      { title: "A+ Training", icon: "mdi-monitor", color: "white" },
       { title: "App Design", icon: "mdi-pencil-ruler", color: "orange" },
     ],
     experiences: [
+      { title: "React", icon: "mdi-react", color: "blue" },
+      { title: "PHP", icon: "mdi-language-php", color: "purple lighten-1" },
       { title: "Node.js", icon: "mdi-nodejs", color: "green" },
       { title: "MongoDB", icon: "mdi-nodejs", color: "green" },
       { title: "Express", icon: "mdi-nodejs", color: "blue" },
       { title: "Mongoose", icon: "mdi-nodejs", color: "blue" },
-      { title: "React", icon: "mdi-react", color: "blue" },
       { title: "Next.js", icon: "mdi-react", color: "blue" },
+      { title: "C#", icon: "mdi-language-csharp", color: "purple" },
+      { title: "C++", icon: "mdi-language-cpp", color: "blue" },
+    ],
+    work: [
+      {
+        logo: "https://i.imgur.com/a8JzMHo.png",
+        company: "Self-Employed",
+        position: "Web Developer",
+        start: "May 2020",
+        end: "current",
+        location: "Herriman, Utah",
+        duties: [
+          {
+            duty:
+              "Developer on professional freelance web development project.",
+          },
+          {
+            duty:
+              "Programming client web application for their client management system.",
+          },
+          {
+            duty: "Writing in Vue.js using Vuetify CSS framework.",
+          },
+          { duty: "Utilizing PHP to connect to existing MySQL backend." },
+          { duty: "Using XAMPP to run a local SQL/Apache server." },
+          {
+            duty:
+              "Implementing sprints weekly to stay focused on project goals and milestones.",
+          },
+        ],
+        skills: "",
+      },
+      {
+        logo:
+          "https://rainfirerestoration.com/wp-content/uploads/2017/09/Full-Logo-w-o-Shadow_2a-e1504901881529.png",
+        company: "RainFire Restoration",
+        position: "Technician",
+        start: "Nov 2017",
+        end: "Aug 2019",
+        location: "Sandy, Utah",
+        duties: [
+          {
+            duty: "",
+          },
+          {
+            duty: "",
+          },
+          {
+            duty: "",
+          },
+          { duty: "" },
+          { duty: "" },
+          { duty: "" },
+        ],
+        skills: "",
+      },
+      {
+        logo:
+          "https://local9marketing.com/wp-content/uploads/2020/05/L9-Logo-small-avatar.png",
+        company: "Local9Marketing",
+        position: "SEO Consultant/Web Developer",
+        start: "Oct 2017",
+        end: "Mar 2018",
+        location: "American Fork, Utah",
+        duties: [
+          {
+            duty:
+              "Consult with potential and existing clients about basic SEO knowledge and best practices using leading SEO tools.",
+          },
+          {
+            duty: "Coordinate ongoing client interaction.",
+          },
+          {
+            duty: "Organize current clients in CRM software.",
+          },
+          { duty: "Find potential clients using many resources." },
+        ],
+        skills: "",
+      },
+      {
+        logo:
+          "https://yt3.ggpht.com/a/AATXAJwsfzUr7Yot5J9bEqAoPvXNVlXzj3yL_FYADQ=s900-c-k-c0xffffffff-no-rj-mo",
+        company: "ThermoWorks, Inc",
+        position: "Small Electronic Repair Technician",
+        start: "June 2017",
+        end: "Nov 2017",
+        location: "American Fork, Utah",
+        duties: [
+          {
+            duty: "Repair products including soldering electrical components.",
+          },
+          {
+            duty:
+              "Following proper troubleshooting steps, asking clarifying questions, and discovering underlying causes of concerns.",
+          },
+          {
+            duty:
+              "Effectively educating customers on product use and assisting them in fully utilizing available features.",
+          },
+          {
+            duty:
+              "Maintaining effective call ownership by providing timely resolutions, maintaining contact on ongoing issues, and managing open items.",
+          },
+        ],
+        skills: "",
+      },
+      {
+        logo:
+          "https://nameclerks.com/wp-content/uploads/2020/02/bluehost-logo.png",
+        company: "Bluehost",
+        position: "Web Advisor",
+        start: "Jun 2015",
+        end: "May 2017",
+        location: "Orem, Utah",
+        duties: [
+          {
+            duty:
+              "Talked with customers and implemented troubleshooting skills to resolve hosting issues. Contacted necessary department to further solve escalated troubleshooting.",
+          },
+          {
+            duty:
+              "Helped install SSL certificates on websites including .htaccess modification.",
+          },
+          {
+            duty:
+              "Walked customers through connecting POP and IMAP email on multiple devices.",
+          },
+          {
+            duty:
+              "Instructed on best practices for managing hosting accounts including file management and security.",
+          },
+          {
+            duty:
+              "Educated and sold security products to improve website security.",
+          },
+          {
+            duty:
+              "Changed code and file structure when needed to improve website functionality.",
+          },
+          {
+            duty:
+              "Diagnosed WSOD errors for Wordpress and other developing software.",
+          },
+          {
+            duty:
+              "Installed and taught customers how to use plugins and themes.",
+          },
+          {
+            duty:
+              "Educated customers on how to manage Wordpress dashboard and features.",
+          },
+          {
+            duty:
+              "Created multiple spreadsheets to help me and others organize sales and products for call center agents.",
+          },
+          {
+            duty:
+              "Helped train during initial training of Web Adviser position.",
+          },
+        ],
+        skills: "",
+      },
+      // {
+      //   logo: "",
+      //   company: "",
+      //   position: "",
+      //   start: "",
+      //   end: "",
+      //   location: "",
+      //   duties: [
+      //     {
+      //       duty: "",
+      //     },
+      //     {
+      //       duty: "",
+      //     },
+      //     {
+      //       duty: "",
+      //     },
+      //     { duty: "" },
+      //     { duty: "" },
+      //     { duty: "" },
+      //   ],
+      //   skills: "",
+      // },
     ],
     about: [
       {
@@ -54,11 +242,11 @@ export default new Vuex.Store({
       },
       {
         bio:
-          "I enjoy <strong>paddleboarding, frisbee golf, fly fishing, listening to podcasts, and watching Twitch streamers.</strong> I love to <strong>travel</strong> and think up new <strong>business ideas</strong>.",
+          "I enjoy paddleboarding, frisbee golf, fly fishing, listening to podcasts and I love to travel and think up new business ideas.",
       },
       {
         bio:
-          "I graduated from Utah Valley University with a <strong>Bachelors degree in Web and App Development</strong> August 14, 2020. I'm currently <strong>looking for employment</strong> as a front-end web developer or full-stack developer. I really enjoy learning new languages and techniques in programming and am open to learning anything. I'm glad that I decided to go into a career path that excites me and I enjoy.",
+          "I graduated from Utah Valley University with a <strong>Bachelors Degree in Web and App Development</strong> August 14, 2020. I'm currently <strong>looking for employment</strong> as a front-end web developer or full-stack developer. I really enjoy learning new languages and techniques in programming and am open to learning anything. I'm glad that I decided to go into a career path that excites me and I enjoy.",
       },
       {
         bio:
@@ -71,7 +259,8 @@ export default new Vuex.Store({
         github: "",
         type: "Freelance",
         live: "",
-        description: "A web app for keeping track of their clients and cases",
+        description:
+          "A web app built in Vue.js and MySQL for keeping track of their clients and cases. Users can also create and record tasks with comments. They can also enter their time.",
         requirements: [
           { text: "Create a web application to live on a subdomain" },
           { text: "Use PHP endpoints to get data from MySQL backend" },
@@ -182,10 +371,10 @@ export default new Vuex.Store({
         tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
       },
       {
-        title: "North Alpine Photo",
+        title: "North Alpine Photo Website",
         github: "https://github.com/CobyYates/northalpine",
         type: "Freelance",
-        live: "http://northalpinephoto.com/",
+        live: "https://north-alpine-photo.netlify.app/",
         description:
           "A portfolio site for a photographer and drone operator. He needed a way for him to be contacted and show off his work. I offered to do his website for him since he is my brother.",
         requirements: [
@@ -212,9 +401,16 @@ export default new Vuex.Store({
           "https://scontent-den4-1.xx.fbcdn.net/v/t1.0-9/119461834_10224969756250740_3395514406448708858_o.jpg?_nc_cat=109&_nc_sid=e3f864&_nc_ohc=VwRsI9CGEPQAX-ePaOQ&_nc_ht=scontent-den4-1.xx&oh=606e4fbad89da660c8cbece5d005bddb&oe=5F97A248",
         images: [
           {
-            location: "http://images.coberapps.com/NorthAlpine.png",
-            title: "Temporary Page",
-            details: "This project is still in development and design phase.",
+            location: "http://images.coberapps.com/North_Alpine_2.png",
+            title: "Home Page",
+            details:
+              "This project is still in development and design phase, however the home page helps visitors understand what the client has to offer them. There is also a contact form and a short bio. This project is still in development.",
+          },
+          {
+            location: "http://images.coberapps.com/North_Alpine_3.png",
+            title: "Gallery Page",
+            details:
+              "Every photographer needs a gallery to show off their work. This gallery is still in development but does have lazy loading for the images as well as filtering for seeing specific typs of work from the client.",
           },
         ],
         stage: "In Development",
@@ -230,67 +426,54 @@ export default new Vuex.Store({
         tags: ["Vue.js", "Vuetify", "HTML", "CSS", "JavaScript"],
       },
       {
-        title: "Good Grindz",
-        github: "http://goodgrindz.com",
-        type: "Freelance",
-        live: "http://goodgrindz.com",
-        description: "Shows details about their business",
+        title: "Keystroke App",
+        github: "https://github.com/jashment/quiz-knows",
+        type: "College Capstone",
+        live: "",
+        description:
+          "Senior Capstone project for UVU Cinema Dept. A web app built in Vue.js and Firebase that helps students practice keystrokes for their Cinema programs. Teachers can view their scores.",
         requirements: [
-          { text: "Add a menu page so customers can see what they make" },
-          { text: "Show their business locations" },
-          { text: "Add their social media feeds" },
+          { text: "Create testing platform for staff and students" },
+          { text: "Allow teachers to create their own quizzes" },
+          { text: "Record students keystrokes using JavaScript" },
+          { text: "Record data in a database" },
+          { text: "Allow teachers to create their own quizzes" },
         ],
         languages: [
-          { icon: "mdi-wordpress", text: "WordPress", color: "blue" },
+          { icon: "mdi-vuejs", text: "Vue.js", color: "green" },
+          { icon: "mdi-vuetify", text: "Vuetify", color: "blue" },
+          { icon: "mdi-firebase", text: "Firebase", color: "orange" },
+          { icon: "mdi-language-css3", text: "CSS", color: "blue" },
+          {
+            icon: "mdi-language-javascript",
+            text: "JavaScript",
+            color: "amber",
+          },
         ],
         logo:
-          "https://www.goodgrindz.com/wp-content/uploads/2019/03/Good-Grindz-Calendar.png",
+          "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Utah_Valley_University_seal.svg/1200px-Utah_Valley_University_seal.svg.png",
         projectLogo: "",
-        hero: "https://i.imgur.com/9J7fcXB.jpg",
-        images: [
-          {
-            location: "http://images.coberapps.com/GoodGrindz.png",
-            title: "Home Page",
-            details: "",
-          },
-          {
-            location: "http://images.coberapps.com/GoodGrindz2.png",
-            title: "Reviews",
-            details:
-              "As a business, their reviews are a great marketing tool to draw customers in. These are located on the home page to make them easy to find.",
-          },
-          {
-            location: "http://images.coberapps.com/GoodGrindz3.png",
-            title: "Menu",
-            details: "Just waiting on images and content from their team.",
-          },
-          {
-            location: "http://images.coberapps.com/GoodGrindz4.png",
-            title: "Footer",
-            details:
-              "The footer includes their contact information as well as their addresses so people can find their locations easily.",
-          },
-          {
-            location: "http://images.coberapps.com/GoodGrindzFull.png",
-            title: "Full Menu",
-            details:
-              "Just waiting for content to come in from their team. Once all the content is provided, this page can be updated and launched.",
-          },
-        ],
-        stage: "In Development",
+        hero:
+          "https://images.pexels.com/photos/3921000/pexels-photo-3921000.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        // images: [
+        //   { location: "", title: "", details: "" },
+        //   { location: "", title: "", details: "" },
+        //   { location: "", title: "", details: "" },
+        // ],
+        stage: "Complete",
         clientComments: "",
         clientInfo: [
           {
             name: "",
-            company: "Good Grindz",
+            company: "UVU - Digital Cinema Dept.",
             position: "",
             image: "",
           },
         ],
-        tags: ["WordPress"],
+        tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
       },
       {
-        title: "Boka",
+        title: "Boka CMS",
         github: "https://github.com/CobyYates/Boka",
         type: "Freelance, Passion Project",
         live: "https://boka-cms.netlify.app/",
@@ -356,50 +539,120 @@ export default new Vuex.Store({
         tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
       },
       {
-        title: "Keystroke App",
-        github: "https://github.com/jashment/quiz-knows",
-        type: "College Capstone",
-        live: "",
-        description: "Senior Capstone project for UVU Cinema Dept",
+        title: "Good Grindz Website",
+        github: "http://goodgrindz.com",
+        type: "Freelance",
+        live: "http://goodgrindz.com",
+        description:
+          "Shows details about their business, including location and their menu. Include their Twitter and social feeds so people know the location of their food truck. Site is waiting for content.",
         requirements: [
-          { text: "Create testing platform for staff and students" },
-          { text: "Allow teachers to create their own quizzes" },
-          { text: "Record students keystrokes using JavaScript" },
-          { text: "Record data in a database" },
-          { text: "Allow teachers to create their own quizzes" },
+          { text: "Add a menu page so customers can see what they make" },
+          { text: "Show their business locations" },
+          { text: "Add their social media feeds" },
         ],
         languages: [
-          { icon: "mdi-vuejs", text: "Vue.js", color: "green" },
-          { icon: "mdi-vuetify", text: "Vuetify", color: "blue" },
+          { icon: "mdi-wordpress", text: "WordPress", color: "blue" },
+        ],
+        logo:
+          "https://www.goodgrindz.com/wp-content/uploads/2019/03/Good-Grindz-Calendar.png",
+        projectLogo: "",
+        hero: "https://i.imgur.com/9J7fcXB.jpg",
+        images: [
+          {
+            location: "http://images.coberapps.com/GoodGrindz.png",
+            title: "Home Page",
+            details: "",
+          },
+          {
+            location: "http://images.coberapps.com/GoodGrindz2.png",
+            title: "Reviews",
+            details:
+              "As a business, their reviews are a great marketing tool to draw customers in. These are located on the home page to make them easy to find.",
+          },
+          {
+            location: "http://images.coberapps.com/GoodGrindz3.png",
+            title: "Menu",
+            details: "Just waiting on images and content from their team.",
+          },
+          {
+            location: "http://images.coberapps.com/GoodGrindz4.png",
+            title: "Footer",
+            details:
+              "The footer includes their contact information as well as their addresses so people can find their locations easily.",
+          },
+          {
+            location: "http://images.coberapps.com/GoodGrindzFull.png",
+            title: "Full Menu",
+            details:
+              "Just waiting for content to come in from their team. Once all the content is provided, this page can be updated and launched.",
+          },
+        ],
+        stage: "In Development",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "Good Grindz",
+            position: "",
+            image: "",
+          },
+        ],
+        tags: ["WordPress"],
+      },
+      {
+        title: "React To-Do App",
+        github: "https://github.com/CobyYates/React_todo",
+        type: "Personal (For job application)",
+        live: "https://react-todo-69761.web.app/",
+        description:
+          "A project built in React for keeping track of tasks with full CRUD functionality in Firebase.",
+        requirements: [
+          { text: "Build a full stack app within 1 week." },
+          {
+            text:
+              "View a list of to-do items with the ability to filter the list by pending, complete, and all to-dos",
+          },
+          { text: "Ability to create new to-do item" },
+          { text: "Ability to edit a to-do item" },
+          { text: "Ability to delete a to-do item" },
+          { text: "Ability to complete a to-do item" },
+        ],
+        languages: [
+          { icon: "mdi-react", text: "React", color: "blue" },
+          { icon: "mdi-material-ui", text: "Material UI", color: "blue" },
           { icon: "mdi-firebase", text: "Firebase", color: "orange" },
-          { icon: "mdi-language-css3", text: "CSS", color: "blue" },
+
           {
             icon: "mdi-language-javascript",
             text: "JavaScript",
             color: "amber",
           },
+          { icon: "mdi-language-html5", text: "HTML", color: "orange" },
+          { icon: "mdi-language-css3", text: "CSS", color: "blue" },
         ],
-        logo:
-          "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Utah_Valley_University_seal.svg/1200px-Utah_Valley_University_seal.svg.png",
+        logo: "http://images.coberapps.com/React_todo_1.png",
         projectLogo: "",
         hero:
-          "https://images.pexels.com/photos/3921000/pexels-photo-3921000.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        // images: [
-        //   { location: "", title: "", details: "" },
-        //   { location: "", title: "", details: "" },
-        //   { location: "", title: "", details: "" },
-        // ],
+          "https://images.pexels.com/photos/1226398/pexels-photo-1226398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        images: [
+          {
+            location: "http://images.coberapps.com/React_todo_1.png",
+            title: "Main Page",
+            details:
+              "The project required that the app have CRUD and filtering built in. The filtering utilizes FireStore's queries. Having very little experience with React at this point, I learned a lot about React Hooks",
+          },
+        ],
         stage: "Complete",
         clientComments: "",
         clientInfo: [
           {
             name: "",
-            company: "Utah Valley University - Digital Cinema Dept.",
+            company: "Personal Project",
             position: "",
             image: "",
           },
         ],
-        tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
+        tags: ["React", "Material UI", "HTML", "CSS", "JavaScript", "Firebase"],
       },
       {
         title: "Pokemon API",

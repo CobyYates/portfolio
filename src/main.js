@@ -5,6 +5,11 @@ import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
 import "@babel/polyfill";
+import VueSmoothScroll from "vue2-smooth-scroll";
+
+Vue.use(VueSmoothScroll, {
+  offset: -20,
+});
 
 Vue.config.productionTip = false;
 

@@ -1,7 +1,21 @@
 <template>
-  <v-container fluid>
+  <v-container class="pa-0" fluid>
+    <vueHeadful title="Coby Yates | All Work" />
+    <v-parallax
+      src="https://images.pexels.com/photos/1624600/pexels-photo-1624600.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      class="mt-0 mb-5 parallax-"
+      height="850">
+      <v-overlay :absolute="true" :opacity="0.3" :value="true">
+        <v-row>
+          <v-col cols="9" class="mx-auto">
+            <h1 class="quote font-weight-light font-italic">{{quote}}</h1>
+            <p class="title mt-3 ml-12">― Jay Samit</p>
+          </v-col>
+        </v-row>
+      </v-overlay>
+    </v-parallax>
     <v-sheet
-      class="mx-auto mb-10"
+      class="mx-auto my-10"
       max-width="95%"
       color="transparent"
     >
@@ -18,12 +32,12 @@
           align="center"
           justify="center"
         >
-          <h2 class="white--text font-weight-light lang">{{languages[model].lang}}</h2>
+          <h2 class="green--text font-weight-light lang">{{languages[model].lang}}</h2>
         </v-row>
       </v-sheet>
     </v-expand-transition>
     <v-divider dark class="mb-3" v-show="model !== null" />
-      <v-slide-group dark center-active show-arrows mandatory v-model="model">
+      <v-slide-group light center-active show-arrows mandatory v-model="model">
         <v-slide-item
           v-for="n in languages"
           :key="n.i"
@@ -71,14 +85,17 @@
 </template>
 
 <script>
+import vueHeadful from "vue-headful";
 export default {
   components: {
+    vueHeadful
   },
   data() {
     return {
       show: false,
       model: null,
       selectedProject: null,
+      quote: 'Pivoting is not the end of the disruption process, but the beginning of the next leg of your journey.',
       privateRepo: false,
       dialog: false,
       all: 'all',
@@ -143,6 +160,10 @@ export default {
 
 .title {
   z-index: 99;
+}
+
+::v-deep .hero img {
+  transform: translate(-50%, 200px)!important;
 }
 
 .lang {
