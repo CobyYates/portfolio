@@ -14,7 +14,23 @@ export default {
     window.scrollTo(0, 0);
   },
   data() {
-    return {};
+    return {
+      metaInfo() {
+      return {
+        title: "Home - Work",
+        meta: [
+          {
+            name: "description",
+            content: `I have experience in multiple languages and platforms. Check it out!`,
+          },
+          { property: "og:title", content: "Home - Projects" },
+          { property: "og:site_name", content: "Home" },
+          { property: "og:type", content: "website" },
+          { name: "robots", content: "index,follow" },
+        ],
+      };
+    },
+    };
   },
 };
 </script>

@@ -7,19 +7,23 @@
           src="https://images.pexels.com/photos/773953/pexels-photo-773953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           :height="heightVH"
         >
-          <v-overlay :absolute="true" :opacity="0.3 " :value="true">
+          <v-overlay :absolute="true" :opacity="0.3" :value="true">
             <div class="hero d-flex flex-column justify-center align-center">
               <h1 class="white--text">{{ name }}</h1>
               <div class="text-center white--text  mt-6">
-                <h2 class="green--text display-1 text-no-wrap text-center">Front-End Developer</h2>
-                <a href="#education" v-smooth-scroll><v-icon size="70">mdi-chevron-double-down</v-icon></a>
+                <h2 class="green--text display-1 text-no-wrap text-center">
+                  Front-End Developer
+                </h2>
+                <a href="#education" v-smooth-scroll
+                  ><v-icon size="70">mdi-chevron-double-down</v-icon></a
+                >
               </div>
             </div>
           </v-overlay>
         </v-parallax>
       </v-col>
     </v-row>
-    
+
     <v-row class="work">
       <v-col>
         <Education id="education" />
@@ -40,19 +44,17 @@
               src="http://images.coberapps.com/about_Me.jpg"
             />
           </v-col>
-          <v-col
-            sm="12"
-            md="8"
-            class="d-flex flex-column align-center"
-          >
-          <h2 class="text-center font-weight-light green--text mb-8">ABOUT ME</h2>
-          <div class="d-flex flex-column justify-space-between">
-            <p
-              v-html="item.bio"
-              v-for="item in $store.state.about"
-              :key="item.i"
-            ></p>
-          </div>
+          <v-col sm="12" md="8" class="d-flex flex-column align-center">
+            <h2 class="text-center font-weight-light green--text mb-8">
+              ABOUT ME
+            </h2>
+            <div class="d-flex flex-column justify-space-between">
+              <p
+                v-html="item.bio"
+                v-for="item in $store.state.about"
+                :key="item.i"
+              ></p>
+            </div>
           </v-col>
         </v-row>
       </v-col>
@@ -62,8 +64,10 @@
         <Projects class="mt-12" />
       </v-col>
     </v-row>
-      <Skills />
-      <a class="back pr-3" href="#top" v-smooth-scroll><v-btn><v-icon large color="blue">mdi-chevron-up</v-icon></v-btn></a>
+    <Skills />
+    <a class="back pr-3" href="#top" v-smooth-scroll
+      ><v-btn><v-icon large color="blue">mdi-chevron-up</v-icon></v-btn></a
+    >
   </div>
 </template>
 
@@ -91,6 +95,18 @@ export default {
     return {
       name: "Coby Yates",
       heightVH: `${window.innerHeight}`,
+      metaInfo() {
+        return {
+          title: "Home - Coby Yates Portfolio",
+          meta: [
+            { name: 'description', content: `I'm a vuejs developer open to all types of projects. With experience in UX/UI and development, I can provide the skills you require.` },
+            { property: 'og:title', content: "Home - Coby Yates Portfolio" },
+            { property: 'og:site_name', content: 'Home' },
+            { property: 'og:type', content: 'website' },
+            { name: 'robots', content: 'index,follow' }
+          ]
+        }
+      }
     }
   },
   methods: {
@@ -113,7 +129,6 @@ export default {
 </script>
 
 <style scoped>
-
 .back {
   position: fixed;
   bottom: 10px;
@@ -138,7 +153,7 @@ h1 {
 }
 
 .daRow {
-  height: 105vh!important;
+  height: 105vh !important;
 }
 
 .aboutMe {

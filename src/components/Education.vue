@@ -8,7 +8,7 @@
           </v-col>
         </v-row>
         <v-row class="d-flex justify-center">
-          <v-col cols="8" md="6" lg="4" xl="3">
+          <v-col cols="12" md="6" lg="4" xl="3">
             <v-card class="d-flex align-center justify-center" height="200">
               <div>
                 <v-img
@@ -24,7 +24,7 @@
               </div>
             </v-card>
           </v-col>
-          <v-col cols="8" md="6" lg="4" xl="3">
+          <v-col cols="12" md="6" lg="4" xl="3">
             <v-card class="d-flex align-center justify-center" height="200">
               <div>
                 <v-img

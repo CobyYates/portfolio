@@ -369,6 +369,7 @@ export default new Vuex.Store({
           },
         ],
         tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
+        hover: false
       },
       {
         title: "North Alpine Photo Website",
@@ -424,6 +425,7 @@ export default new Vuex.Store({
           },
         ],
         tags: ["Vue.js", "Vuetify", "HTML", "CSS", "JavaScript"],
+        hover: false
       },
       {
         title: "Keystroke App",
@@ -471,6 +473,7 @@ export default new Vuex.Store({
           },
         ],
         tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
+        hover: false
       },
       {
         title: "Boka CMS",
@@ -537,6 +540,83 @@ export default new Vuex.Store({
           },
         ],
         tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
+        hover: false
+      },
+      {
+        title: "Slack Clone",
+        github: "https://github.com/CobyYates/React-slack_clone",
+        type: "Personal Project",
+        live: "http://slack.coberapps.com/",
+        description:
+          "I'm learning React at the moment and thought that a simplified Slack clone would be a fun exercise. I felt like I started to really understand React a lot better from building this web application.",
+        requirements: [
+          {
+            text:
+              "Build the web app in React using Material-UI and custom components",
+          },
+          { text: "Add different rooms to chat in" },
+          { text: "Connect the React app to a Firestore backend" },
+          {
+            text:
+              "Focus on making as much of the UI out of components as possible using State Management",
+          },
+        ],
+        languages: [
+          { icon: "mdi-react", text: "React", color: "blue" },
+          { icon: "mdi-material-ui", text: "Material UI", color: "blue" },
+          { icon: "mdi-firebase", text: "Firebase", color: "orange" },
+
+          {
+            icon: "mdi-language-javascript",
+            text: "JavaScript",
+            color: "amber",
+          },
+          { icon: "mdi-language-html5", text: "HTML", color: "orange" },
+          { icon: "mdi-language-css3", text: "CSS", color: "blue" },
+        ],
+        logo: "https://cdn2.hubspot.net/hubfs/521324/slack-logo.png",
+        hero:
+          "https://images.pexels.com/photos/430205/pexels-photo-430205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        projectLogo: "",
+        images: [
+          {
+            location: "http://images.coberapps.com/slack_1.png",
+            title: "Login",
+            details:
+              "Use Firebase's popup to login with the users Gmail address.",
+          },
+          {
+            location: "http://images.coberapps.com/slack_2.png",
+            title: "Home",
+            details:
+              "This is just the default route when logging into the web application.",
+          },
+          {
+            location: "http://images.coberapps.com/slack_3.png",
+            title: "Chat Room #general",
+            details:
+              "This page shows the layout as well as some of the chats inside of the #general room. The user is able to click on a room and chat which pushes their information (ie display name, timestamp, photo, etc) to the database and show up in other users' screens in real time.",
+          },
+        ],
+        stage: "Complete",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "Personal Project",
+            position: "",
+            image: "",
+          },
+        ],
+        tags: [
+          "HTML",
+          "SASS",
+          "JavaScript",
+          "React",
+          "Material-UI",
+          "Firebase",
+        ],
+        hover: false
       },
       {
         title: "Good Grindz Website",
@@ -598,6 +678,7 @@ export default new Vuex.Store({
           },
         ],
         tags: ["WordPress"],
+        hover: false
       },
       {
         title: "React To-Do App",
@@ -653,6 +734,7 @@ export default new Vuex.Store({
           },
         ],
         tags: ["React", "Material UI", "HTML", "CSS", "JavaScript", "Firebase"],
+        hover: false
       },
       {
         title: "Pokemon API",
@@ -710,6 +792,7 @@ export default new Vuex.Store({
           },
         ],
         tags: ["HTML", "CSS", "JavaScript"],
+        hover: false
       },
       {
         title: "Star Wars API",
@@ -762,6 +845,7 @@ export default new Vuex.Store({
           },
         ],
         tags: ["HTML", "CSS", "JavaScript"],
+        hover: false
       },
       {
         title: "Car Garage",
@@ -822,6 +906,7 @@ export default new Vuex.Store({
           },
         ],
         tags: ["Vue.js", "Vuetify", "HTML", "CSS", "JavaScript"],
+        hover: false
       },
       {
         title: "Car Garage version 2",
@@ -878,6 +963,7 @@ export default new Vuex.Store({
           "MongoDB",
           "GraphQL",
         ],
+        hover: false
       },
       {
         title: "Weather APP",
@@ -925,6 +1011,7 @@ export default new Vuex.Store({
           },
         ],
         tags: ["React", "Material UI", "HTML", "CSS", "JavaScript"],
+        hover: false
       },
       {
         title: "Pomodoro",
@@ -981,6 +1068,7 @@ export default new Vuex.Store({
           },
         ],
         tags: ["Vue.js", "Vuetify", "CSS", "JavaScript"],
+        hover: false
       },
       {
         title: "Final Score",
@@ -1029,6 +1117,7 @@ export default new Vuex.Store({
           },
         ],
         tags: ["Vue.js", "Vuetify", "Firebase", "HTML", "CSS", "JavaScript"],
+        hover: false
       },
       {
         title: "Next.js Pokemon",
@@ -1080,6 +1169,181 @@ export default new Vuex.Store({
           },
         ],
         tags: ["Next.js", "HTML", "CSS", "JavaScript", "React"],
+        hover: false
+      },
+      {
+        title: "Photoshop Pixel Perfect Site",
+        github: "https://github.com/CobyYates/2740/tree/master/Module%2015",
+        type: "College Project",
+        live: "http://2740.coberapps.com/Module15/index.html",
+        description:
+          "For this project, my professor gave me a Photoshop file and asked me to make a pixel perfect website representation of it which was responsive.",
+        requirements: [
+          { text: "Create pixel perfect site from Photoshop file" },
+          { text: "Make the site responsive" },
+          { text: "Add mobile naviagation" },
+        ],
+        languages: [
+          {
+            icon: "mdi-language-javascript",
+            text: "JavaScript",
+            color: "amber",
+          },
+          { icon: "mdi-language-html5", text: "HTML", color: "orange" },
+          { text: "SASS", icon: "mdi-sass", color: "pink" },
+        ],
+        logo: "http://2740.coberapps.com/Module15/images/logo.png",
+        hero:
+          "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        projectLogo: "",
+        images: [
+          {
+            location: "http://images.coberapps.com/Blue_River_1.png",
+            title: "Home Page",
+            details:
+              "This page was made pixel perfect from Photoshop file given by my professor. It is responsive with a mobile menu.",
+          },
+        ],
+        stage: "Complete",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "College Project",
+            position: "",
+            image: "",
+          },
+        ],
+        tags: ["HTML", "SASS", "CSS", "JavaScript"],
+        hover: false
+      },
+      {
+        title: "Yoga Site",
+        github: "https://github.com/CobyYates/DGM-2780-Bootstrap-Starter",
+        type: "College Project",
+        live: "http://2740.coberapps.com/test/index.html",
+        description:
+          "School project where we were asked to make a yoga website based off of another website we found online.",
+        requirements: [
+          { text: "Use Bootstrap as a CSS framework" },
+          {
+            text: "Replicate an existing website layout from a website I find",
+          },
+        ],
+        languages: [
+          { icon: "mdi-language-html5", text: "HTML", color: "orange" },
+          { icon: "mdi-bootstrap", text: "Bootstrap", color: "purple" },
+          { icon: "mdi-language-css3", text: "CSS", color: "blue" },
+          { text: "SASS", icon: "mdi-sass", color: "pink" },
+        ],
+        logo:
+          "https://github.com/CobyYates/DGM-2780-Bootstrap-Starter/blob/master/images/logo.PNG?raw=true",
+        hero:
+          "https://images.pexels.com/photos/3735635/pexels-photo-3735635.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        projectLogo: "",
+        images: [
+          {
+            location: "http://images.coberapps.com/Yoga_1.png",
+            title: "Home Page",
+            details:
+              "After selecting a site I liked (I don't remember which one now), I created my own copy of their layout and built this homepage in Bootstrap using LESS. This was my first introduction to Bootstrap and CSS frameworks in general.",
+          },
+          {
+            location: "http://images.coberapps.com/Yoga_2.png",
+            title: "Yoga Store",
+            details:
+              "I looked at the store from the site I replicated mine from and created a very similar store with a grid layout to make this page. I enjoyed all the white space and simplicity of the design.",
+          },
+          {
+            location: "http://images.coberapps.com/Yoga_3.png",
+            title: "About Page",
+            details: "Simple about page using Bootstrap as the CSS framework. ",
+          },
+          {
+            location: "http://images.coberapps.com/Yoga_4.png",
+            title: "Contact Page",
+            details:
+              "Yet another page with Bootstrap for the layout. This is the contact page and isn't functional, but was fun to learn.",
+          },
+        ],
+        stage: "Complete",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "College Project",
+            position: "",
+            image: "",
+          },
+        ],
+        tags: ["HTML", "LESS", "CSS", "Bootstrap"],
+        hover: false
+      },
+      {
+        title: "Cabot Cruises",
+        github: "https://github.com/CobyYates/3740/tree/master/Cabot-Cruise",
+        type: "College Project",
+        live: "http://3740wp.coberapps.com/",
+        description:
+          "This was my first time building my own theme for WordPress. It took some time to learn how to get the menu working with PHP and all the other WordPress functionality. This is a fully respsonsive website.",
+        requirements: [
+          { text: "Add responsive navigation" },
+          { text: "Make the site mobile friendly (including the carousel)" },
+          { text: "Build it in HTML, SASS, JavaScript, and PHP" },
+        ],
+        languages: [
+          {
+            icon: "mdi-language-javascript",
+            text: "JavaScript",
+            color: "amber",
+          },
+          { icon: "mdi-firebase", text: "Firebase", color: "orange" },
+          { icon: "mdi-language-css3", text: "CSS", color: "blue" },
+          { icon: "mdi-language-html5", text: "HTML", color: "orange" },
+          { text: "SASS", icon: "mdi-sass", color: "pink" },
+        ],
+        logo:
+          "https://github.com/CobyYates/3740/blob/master/Cabot-Cruise/images/logo.png?raw=true",
+        hero:
+          "https://images.pexels.com/photos/2941017/pexels-photo-2941017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        projectLogo: "",
+        images: [
+          {
+            location: "http://images.coberapps.com/Cabot_Cruises_1.png",
+            title: "Home",
+            details:
+              "Built off of a design from my professor. This site doesn't have much functionality, but was more about learning how to develop a WordPress theme.",
+          },
+          {
+            location: "http://images.coberapps.com/Cabot_Cruises_2.png",
+            title: "Cruises",
+            details:
+              "For the site, we were to display some cruises as to the professors requirements with a 'Read More' button",
+          },
+          {
+            location: "http://images.coberapps.com/Cabot_Cruises_3.png",
+            title: "Agent",
+            details:
+              "The site has sub-navigation built into the menu and you can then select from a list of different Agents on the site. This was mainly to learn about the navigation as well as styling for WordPress and using PHP",
+          },
+          {
+            location: "http://images.coberapps.com/Cabot_Cruises_4.png",
+            title: "Contact Page",
+            details: "A contact page with multiple dropdowns",
+          },
+        ],
+        stage: "Complete",
+        clientComments: "",
+        clientInfo: [
+          {
+            name: "",
+            company: "College Project",
+            position: "",
+            image: "",
+          },
+        ],
+        tags: ["HTML", "SASS", "JavaScript", "WordPress"],
+        hover: false
       },
     ],
   },

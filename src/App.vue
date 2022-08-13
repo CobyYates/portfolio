@@ -42,7 +42,7 @@
     }),
     methods: {
       openPDF() {
-        window.open('http://coberapps.com/img/Resume-Coby Yates.pdf');
+        window.open('http://coberapps.com/img/Resume--Coby Yates.pdf');
       },
       goHome(){
         this.$router.replace('/')

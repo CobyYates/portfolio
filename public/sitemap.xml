@@ -1,0 +1,16 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml" xsi:schemaLocation=" http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://www.coberapps.com/</loc>
+    <lastmod>2022-08-10T22:16:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0000</priority>
+  </url>
+  <url>
+    <loc>https://www.coberapps.com/projects</loc>
+    <lastmod>2022-08-10T22:16:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8000</priority>
+  </url>
+</urlset>

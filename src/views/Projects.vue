@@ -1,28 +1,72 @@
 <template>
   <v-container class="pa-0" fluid>
     <vueHeadful :title="`Coby Yates | ${project.title}`" />
-    <v-parallax class="mt-0" :src="`${project.hero}`" height="650">
+    <v-parallax class="mt-0 hero" :src="`${project.hero}`">
       <v-overlay :absolute="true" :opacity="0.5" :value="true">
-        <v-row class="overlayRow pb-12">
-          <v-col cols="6" class="d-flex justify-center align-center pr-0">
-            <v-img :src="project.projectLogo !== '' ? `${project.projectLogo}` : `${project.logo}`" max-width="150" class="mr-5" contain />
+        <v-row class="overlayRow ">
+          <v-col
+            cols="12"
+            sm="12"
+            md="10"
+            lg="4"
+            xl="4"
+            class="d-flex justify-center align-center pr-0"
+          >
+            <v-img
+              :src="
+                project.projectLogo !== ''
+                  ? `${project.projectLogo}`
+                  : `${project.logo}`
+              "
+              max-width="150"
+              class="mr-5"
+              contain
+            />
             <div>
               <h1 class="font-weight-normal">{{ project.title }}</h1>
-              <h2 class="font-weight-light" v-if="project.clientInfo[0].company !== 'College Project'">
+              <h2
+                class="font-weight-light pb-3"
+                v-if="project.clientInfo[0].company !== 'College Project'"
+              >
                 Client: {{ project.clientInfo[0].company }}
               </h2>
-              <h2 class="font-weight-light" v-if="project.clientInfo[0].company === 'College Project'">
+              <h2
+                class="font-weight-light"
+                v-if="project.clientInfo[0].company === 'College Project'"
+              >
                 {{ project.clientInfo[0].company }} (UVU)
               </h2>
               <h3 class="font-weight-light">
-                Project Status: <v-chip label :color="project.stage === 'Complete' ? 'green' : 'amber darken-3'">{{ project.stage }}</v-chip>
+                Project Status:
+                <v-chip
+                  label
+                  :color="
+                    project.stage === 'Complete' ? 'green' : 'amber darken-3'
+                  "
+                  >{{ project.stage }}</v-chip
+                >
               </h3>
             </div>
             <v-divider vertical class="pl-12" />
           </v-col>
-          <v-col cols="6" v-if="project.clientComments !== ''" class="mt-12">
+          <v-col
+            cols="12"
+            sm="12"
+            md="12"
+            lg="8"
+            xl="8"
+            v-if="project.clientComments !== ''"
+            class="mt-12 d-flex justify-center"
+          >
             <v-row>
-              <v-col cols="3" class="d-flex flex-column justify-center pl-12">
+              <v-col
+                cols="12"
+                sm="12"
+                md="3"
+                lg="3"
+                xl="3"
+                class="d-flex flex-column justify-center pl-12"
+              >
                 <v-avatar
                   v-if="project.clientInfo[0].image !== null"
                   size="120"
@@ -30,10 +74,14 @@
                 >
                   <v-img :src="`${project.clientInfo[0].image}`" />
                 </v-avatar>
-                <p>{{ project.clientInfo[0].position }} at
-                {{ project.clientInfo[0].company }}</p>
+                <p>
+                  {{ project.clientInfo[0].position }} at
+                  {{ project.clientInfo[0].company }}
+                </p>
               </v-col>
-              <v-col cols="9" > "{{ project.clientComments }}" </v-col>
+              <v-col cols="12 px-0 mx-0" sm="12" md="9" lg="9" xl="9">
+                "{{ project.clientComments }}"
+              </v-col>
             </v-row>
           </v-col>
         </v-row>
@@ -99,20 +147,28 @@
     >
       <v-col sm="12" md="6" lg="6" xl="6" class="pa-0 ma-0">
         <center>
-          <v-skeleton-loader
-            class="mx-auto"
-            max-width="100%"
-            type="image"
-          >
-            <v-img :src="image.location" />
-          </v-skeleton-loader>
+          <v-img :src="image.location">
+            <template v-slot:placeholder>
+              <v-row class="fill-height ma-0" align="center" justify="center">
+                <v-progress-circular
+                  indeterminate
+                  color="green"
+                ></v-progress-circular>
+              </v-row>
+            </template>
+          </v-img>
         </center>
       </v-col>
       <v-col
-        sm="12" md="6" lg="6" xl="6"
+        sm="12"
+        md="6"
+        lg="6"
+        xl="6"
         class="d-flex flex-column justify-center align-center blue-grey darken-2"
       >
-        <h2 class="white--text text-wrap px-10 pb-8 font-weight-thin">{{ image.title.toUpperCase() }}</h2>
+        <h2 class="white--text text-wrap px-10 pb-8 font-weight-thin">
+          {{ image.title.toUpperCase() }}
+        </h2>
         <h3 class="white--text font-weight-light text-wrap px-10">
           {{ image.details }}
         </h3>
@@ -137,6 +193,21 @@ export default {
   data: () => ({
     project: null,
     privateRepo: false,
+    metaInfo() {
+      return {
+        title: "Home - Projects",
+        meta: [
+          {
+            name: "description",
+            content: `I have experience in multiple languages and platforms. Check it out!`,
+          },
+          { property: "og:title", content: "Home - Projects" },
+          { property: "og:site_name", content: "Home" },
+          { property: "og:type", content: "website" },
+          { name: "robots", content: "index,follow" },
+        ],
+      };
+    },
   }),
   components: {
     vueHeadful,
@@ -147,7 +218,7 @@ export default {
     },
   },
   created() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     this.project = this.$store.state.cards.filter(
       (e) => e.title === this.$route.params.id
     )[0];
@@ -157,7 +228,7 @@ export default {
 
 <style scoped>
 ::v-deep .v-parallax__image-container img {
-  padding-bottom: 115px;
+  padding-bottom: 15%;
 }
 
 .specs {
@@ -170,5 +241,14 @@ export default {
 
 .divider {
   border: 0.25px solid white;
+}
+
+.client {
+  height: 100%;
+  margin-bottom: 110px;
+}
+
+.hero {
+  height: 100vh !important;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="py-10">
+  <v-container fluid class="py-10 container">
       <v-row >
         <v-col>
         <h2 class="text-center font-weight-light green--text">WORK EXPERIENCE</h2>
@@ -55,5 +55,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
